@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "69787231510",
+    "project_id": "trial-gs",
+    "storage_bucket": "trial-gs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69787231510:android:eaaa4f3a5c5db01c1a1c37",
+        "android_client_info": {
+          "package_name": "com.mycompany.justtriallll"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrEh_5jH3Gt4NTx__Mq25y9GUnFtSQ8eo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
