@@ -365,7 +365,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Password',
       'de': '',
     },
-    'cmulnora': {
+    'qd3ccuqc': {
       'en': 'Sign In',
       'de': '',
     },
@@ -375,6 +375,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'h5ojpnjk': {
       'en': 'Sign up',
+      'de': '',
+    },
+    'uwsmgmyn': {
+      'en': 'Emergency',
       'de': '',
     },
     '1iskulnl': {
@@ -684,46 +688,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Nearby Hospitals',
       'de': '',
     },
-    'z07ywjdi': {
-      'en': 'Klinikum Bremen-Nord gGmbH',
-      'de': '',
-    },
-    'g7fy1ir4': {
-      'en': 'University teaching hospital of',
-      'de': '',
-    },
-    'mjicppo6': {
-      'en': 'the University of Göttingen',
-      'de': '',
-    },
-    'evf1e50b': {
-      'en': 'Hammersbecker Straße 228',
-      'de': '',
-    },
-    'njxwzcye': {
-      'en': '28755 Bremen',
-      'de': '',
-    },
-    'jcfjc56v': {
-      'en': 'Emergency',
-      'de': '',
-    },
-    '0xvav7a2': {
-      'en': 'St. Joseph-Stift Bremen',
-      'de': '',
-    },
-    'c7jvxywh': {
-      'en': 'Schwachhauser Heerstrasse 54',
-      'de': '',
-    },
-    'd07ggxkg': {
-      'en': '28209 Bremen',
-      'de': '',
-    },
-    'udcg4dmi': {
-      'en': 'General',
-      'de': '',
-    },
     'dg1u0gsv': {
       'en': 'Hospitals',
       'de': '',
@@ -850,8 +814,126 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
     },
   },
+  // GenPracDescription
+  {
+    '217lie5l': {
+      'en': 'Discription',
+      'de': '',
+    },
+    '1d4nx409': {
+      'en': '3',
+      'de': '',
+    },
+    'ybqqn9a7': {
+      'en': 'likes',
+      'de': '',
+    },
+    'rk76b7vw': {
+      'en': '8',
+      'de': '',
+    },
+    'ucv2mbcd': {
+      'en': 'Reviews',
+      'de': '',
+    },
+    '7mhxu8i0': {
+      'en': 'Reviews',
+      'de': '',
+    },
+    '3gvyhz0x': {
+      'en': 'Write a Review',
+      'de': '',
+    },
+    'bosq8hmp': {
+      'en': 'Home',
+      'de': '',
+    },
+  },
+  // GenpractiCopy
+  {
+    'wcshicrn': {
+      'en': 'Search all articles...',
+      'de': '',
+    },
+    '3ld38tay': {
+      'en': 'Open Now',
+      'de': '',
+    },
+    'zmkg2emi': {
+      'en': 'English',
+      'de': '',
+    },
+    'iss34423': {
+      'en': 'TK',
+      'de': '',
+    },
+    'yrjjvvo2': {
+      'en': 'AOK',
+      'de': '',
+    },
+    'te31fnq9': {
+      'en': 'Location - Near to Far',
+      'de': '',
+    },
+    'mr8xzv3g': {
+      'en': 'Location  - Far to Near',
+      'de': '',
+    },
+    'f13sjzug': {
+      'en': 'Review - 1 to 5',
+      'de': '',
+    },
+    'riol0vtm': {
+      'en': 'Review - 5 to 1',
+      'de': '',
+    },
+    'a9hzmfhp': {
+      'en': 'Work experience - most to least',
+      'de': '',
+    },
+    'ffqjvrjs': {
+      'en': 'Work experience - least to most',
+      'de': '',
+    },
+    'wk7wgpxz': {
+      'en': 'Sort by',
+      'de': '',
+    },
+    '4dccg595': {
+      'en': 'Search for an item...',
+      'de': '',
+    },
+    'vlwutco8': {
+      'en': '28759 Bremen',
+      'de': '',
+    },
+    'nb7aphr3': {
+      'en': 'map',
+      'de': '',
+    },
+    'cu15nby9': {
+      'en': '28759 Bremen',
+      'de': '',
+    },
+    'w3yzppt1': {
+      'en': 'map',
+      'de': '',
+    },
+    'r2bo88rr': {
+      'en': 'General Practitioners',
+      'de': '',
+    },
+  },
   // Miscellaneous
   {
+    'xwphu1it': {
+      'en': '',
+      'de': '',
+    },
+    'fb4px5ss': {
+      'en': '',
+      'de': '',
+    },
     'ok2at06t': {
       'en': '',
       'de': '',

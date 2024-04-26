@@ -67,6 +67,7 @@ class _AOKInsurWidgetState extends State<AOKInsurWidget> {
                   fontFamily: 'Outfit',
                   color: Colors.white,
                   fontSize: 22.0,
+                  letterSpacing: 0.0,
                 ),
           ),
           actions: [],
@@ -93,6 +94,7 @@ class _AOKInsurWidgetState extends State<AOKInsurWidget> {
                           FlutterFlowTheme.of(context).headlineMedium.override(
                                 fontFamily: 'Outfit',
                                 color: FlutterFlowTheme.of(context).primaryText,
+                                letterSpacing: 0.0,
                               ),
                     ),
                   ),
@@ -106,6 +108,7 @@ class _AOKInsurWidgetState extends State<AOKInsurWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Readex Pro',
                             color: FlutterFlowTheme.of(context).secondaryText,
+                            letterSpacing: 0.0,
                           ),
                     ),
                   ),
@@ -119,6 +122,7 @@ class _AOKInsurWidgetState extends State<AOKInsurWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Readex Pro',
                             color: FlutterFlowTheme.of(context).secondaryText,
+                            letterSpacing: 0.0,
                           ),
                     ),
                   ),
@@ -137,6 +141,7 @@ class _AOKInsurWidgetState extends State<AOKInsurWidget> {
                       style: FlutterFlowTheme.of(context).titleSmall.override(
                             fontFamily: 'Readex Pro',
                             color: FlutterFlowTheme.of(context).primary,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),

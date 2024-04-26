@@ -24,19 +24,17 @@ class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
 
   // State field(s) for yourName widget.
   FocusNode? yourNameFocusNode;
-  TextEditingController? yourNameController;
-  String? Function(BuildContext, String?)? yourNameControllerValidator;
+  TextEditingController? yourNameTextController;
+  String? Function(BuildContext, String?)? yourNameTextControllerValidator;
   // State field(s) for country widget.
   FocusNode? countryFocusNode;
-  TextEditingController? countryController;
-  String? Function(BuildContext, String?)? countryControllerValidator;
+  TextEditingController? countryTextController;
+  String? Function(BuildContext, String?)? countryTextControllerValidator;
   // State field(s) for birth_date widget.
   FocusNode? birthDateFocusNode;
-  TextEditingController? birthDateController;
-  String? Function(BuildContext, String?)? birthDateControllerValidator;
+  TextEditingController? birthDateTextController;
+  String? Function(BuildContext, String?)? birthDateTextControllerValidator;
   DateTime? datePicked;
-
-  /// Initialization and disposal methods.
 
   @override
   void initState(BuildContext context) {}
@@ -44,16 +42,12 @@ class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
   @override
   void dispose() {
     yourNameFocusNode?.dispose();
-    yourNameController?.dispose();
+    yourNameTextController?.dispose();
 
     countryFocusNode?.dispose();
-    countryController?.dispose();
+    countryTextController?.dispose();
 
     birthDateFocusNode?.dispose();
-    birthDateController?.dispose();
+    birthDateTextController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

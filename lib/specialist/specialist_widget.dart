@@ -62,7 +62,10 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
             FFLocalizations.of(context).getText(
               '5d9brnpl' /* Specialists */,
             ),
-            style: FlutterFlowTheme.of(context).headlineMedium,
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Outfit',
+                  letterSpacing: 0.0,
+                ),
           ),
           actions: [],
           centerTitle: false,
@@ -82,7 +85,10 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                     FFLocalizations.of(context).getText(
                       'dlas4smu' /* Near Campus */,
                     ),
-                    style: FlutterFlowTheme.of(context).headlineLarge,
+                    style: FlutterFlowTheme.of(context).headlineLarge.override(
+                          fontFamily: 'Outfit',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                 ),
                 Padding(
@@ -150,7 +156,11 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                               'zlyxb33p' /* Dr.  Dietmar Schulte am Hülse */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyLarge,
+                                                .bodyLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           Text(
                                             FFLocalizations.of(context).getText(
@@ -161,6 +171,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                 .override(
                                                   fontFamily: 'Readex Pro',
                                                   fontSize: 13.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
                                           ),
@@ -169,7 +180,11 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                               '5t9ebvhm' /* Vegesacker Bahnhofsplatz 2 */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .labelMedium,
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -190,6 +205,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
+                                                      letterSpacing: 0.0,
                                                     ),
                                               ),
                                               Align(
@@ -222,6 +238,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
@@ -271,6 +288,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
@@ -347,7 +365,11 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                               'ov9wxmxp' /* Mostafa Shirazi */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyLarge,
+                                                .bodyLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           Text(
                                             FFLocalizations.of(context).getText(
@@ -358,6 +380,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                 .override(
                                                   fontFamily: 'Readex Pro',
                                                   fontSize: 13.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
                                           ),
@@ -366,7 +389,11 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                               '845de6di' /* Hindenburg Str.56 */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .labelMedium,
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -387,6 +414,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
+                                                      letterSpacing: 0.0,
                                                     ),
                                               ),
                                             ],
@@ -434,6 +462,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
@@ -510,7 +539,11 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                               'ho8mzhcy' /* Dr. Christa Goecke */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyLarge,
+                                                .bodyLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           Text(
                                             FFLocalizations.of(context).getText(
@@ -521,6 +554,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                 .override(
                                                   fontFamily: 'Readex Pro',
                                                   fontSize: 13.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
                                           ),
@@ -529,7 +563,11 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                               'xpzfjvtj' /* Gerhard-Rohlfs Strasse 16 a */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .labelMedium,
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -550,6 +588,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
+                                                      letterSpacing: 0.0,
                                                     ),
                                               ),
                                               Align(
@@ -582,6 +621,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
@@ -631,6 +671,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
@@ -707,7 +748,11 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                               'm3xlepgk' /* Dr.  Ingrid Böhnke */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyLarge,
+                                                .bodyLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           Text(
                                             FFLocalizations.of(context).getText(
@@ -718,6 +763,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                 .override(
                                                   fontFamily: 'Readex Pro',
                                                   fontSize: 13.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
                                           ),
@@ -726,7 +772,11 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                               't0c43but' /* Gerhard-Rohlfs Strasse 16 a */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .labelMedium,
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -747,6 +797,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
+                                                      letterSpacing: 0.0,
                                                     ),
                                               ),
                                               Align(
@@ -779,6 +830,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
@@ -828,6 +880,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
@@ -904,7 +957,11 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                               'kyei5i8n' /* Dr. Hans Udo Homoth */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyLarge,
+                                                .bodyLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           Text(
                                             FFLocalizations.of(context).getText(
@@ -915,6 +972,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                 .override(
                                                   fontFamily: 'Readex Pro',
                                                   fontSize: 13.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
                                           ),
@@ -923,7 +981,11 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                               'e9wr03o5' /* Gerhard-Rohlfs-Straße 19 */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .labelMedium,
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -944,6 +1006,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
+                                                      letterSpacing: 0.0,
                                                     ),
                                               ),
                                               Align(
@@ -976,6 +1039,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
@@ -1025,6 +1089,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
@@ -1101,7 +1166,11 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                               'o3ondjlu' /* Beate Zschausch */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyLarge,
+                                                .bodyLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           Text(
                                             FFLocalizations.of(context).getText(
@@ -1112,6 +1181,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                 .override(
                                                   fontFamily: 'Readex Pro',
                                                   fontSize: 13.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
                                           ),
@@ -1120,7 +1190,11 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                               'ksbn0mqg' /* Reeder-Bischoff-Str. 28 */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .labelMedium,
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1141,6 +1215,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
+                                                      letterSpacing: 0.0,
                                                     ),
                                               ),
                                               Align(
@@ -1173,6 +1248,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
@@ -1222,6 +1298,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),

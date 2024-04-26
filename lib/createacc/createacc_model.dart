@@ -1,5 +1,4 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -18,27 +17,26 @@ class CreateaccModel extends FlutterFlowModel<CreateaccWidget> {
   final unfocusNode = FocusNode();
   // State field(s) for name widget.
   FocusNode? nameFocusNode;
-  TextEditingController? nameController;
-  String? Function(BuildContext, String?)? nameControllerValidator;
+  TextEditingController? nameTextController;
+  String? Function(BuildContext, String?)? nameTextControllerValidator;
   // State field(s) for UniversityDropDown widget.
   String? universityDropDownValue;
   FormFieldController<String>? universityDropDownValueController;
   // State field(s) for emailAddress widget.
   FocusNode? emailAddressFocusNode;
-  TextEditingController? emailAddressController;
-  String? Function(BuildContext, String?)? emailAddressControllerValidator;
+  TextEditingController? emailAddressTextController;
+  String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
   // State field(s) for password widget.
   FocusNode? passwordFocusNode;
-  TextEditingController? passwordController;
+  TextEditingController? passwordTextController;
   late bool passwordVisibility;
-  String? Function(BuildContext, String?)? passwordControllerValidator;
+  String? Function(BuildContext, String?)? passwordTextControllerValidator;
   // State field(s) for passwordConfirm widget.
   FocusNode? passwordConfirmFocusNode;
-  TextEditingController? passwordConfirmController;
+  TextEditingController? passwordConfirmTextController;
   late bool passwordConfirmVisibility;
-  String? Function(BuildContext, String?)? passwordConfirmControllerValidator;
-
-  /// Initialization and disposal methods.
+  String? Function(BuildContext, String?)?
+      passwordConfirmTextControllerValidator;
 
   @override
   void initState(BuildContext context) {
@@ -50,19 +48,15 @@ class CreateaccModel extends FlutterFlowModel<CreateaccWidget> {
   void dispose() {
     unfocusNode.dispose();
     nameFocusNode?.dispose();
-    nameController?.dispose();
+    nameTextController?.dispose();
 
     emailAddressFocusNode?.dispose();
-    emailAddressController?.dispose();
+    emailAddressTextController?.dispose();
 
     passwordFocusNode?.dispose();
-    passwordController?.dispose();
+    passwordTextController?.dispose();
 
     passwordConfirmFocusNode?.dispose();
-    passwordConfirmController?.dispose();
+    passwordConfirmTextController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

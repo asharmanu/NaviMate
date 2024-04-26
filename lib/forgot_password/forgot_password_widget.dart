@@ -26,7 +26,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
     super.initState();
     _model = createModel(context, () => ForgotPasswordModel());
 
-    _model.emailAddressController ??= TextEditingController();
+    _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
   }
 
@@ -68,6 +68,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
             style: FlutterFlowTheme.of(context).displaySmall.override(
                   fontFamily: 'Outfit',
                   fontSize: 16.0,
+                  letterSpacing: 0.0,
                 ),
           ),
         ),
@@ -122,7 +123,12 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                             FFLocalizations.of(context).getText(
                               'hjv74hix' /* Back */,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
                           ),
                         ),
                       ],
@@ -135,7 +141,10 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                   FFLocalizations.of(context).getText(
                     'ep7q6wu1' /* Forgot Password */,
                   ),
-                  style: FlutterFlowTheme.of(context).headlineMedium,
+                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+                        fontFamily: 'Outfit',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
               Padding(
@@ -144,7 +153,10 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                   FFLocalizations.of(context).getText(
                     'vnlw0mrw' /* We will send you an email with... */,
                   ),
-                  style: FlutterFlowTheme.of(context).labelMedium,
+                  style: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
               Padding(
@@ -152,7 +164,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                 child: Container(
                   width: double.infinity,
                   child: TextFormField(
-                    controller: _model.emailAddressController,
+                    controller: _model.emailAddressTextController,
                     focusNode: _model.emailAddressFocusNode,
                     autofillHints: [AutofillHints.email],
                     obscureText: false,
@@ -160,11 +172,19 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                       labelText: FFLocalizations.of(context).getText(
                         'ng0pktpw' /* Your email address... */,
                       ),
-                      labelStyle: FlutterFlowTheme.of(context).labelMedium,
+                      labelStyle:
+                          FlutterFlowTheme.of(context).labelMedium.override(
+                                fontFamily: 'Readex Pro',
+                                letterSpacing: 0.0,
+                              ),
                       hintText: FFLocalizations.of(context).getText(
                         '623c0mck' /* Enter your email... */,
                       ),
-                      hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                      hintStyle:
+                          FlutterFlowTheme.of(context).labelMedium.override(
+                                fontFamily: 'Readex Pro',
+                                letterSpacing: 0.0,
+                              ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           color: FlutterFlowTheme.of(context).alternate,
@@ -199,11 +219,14 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                       contentPadding: EdgeInsetsDirectional.fromSTEB(
                           24.0, 24.0, 20.0, 24.0),
                     ),
-                    style: FlutterFlowTheme.of(context).bodyMedium,
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                     maxLines: null,
                     keyboardType: TextInputType.emailAddress,
                     cursorColor: FlutterFlowTheme.of(context).primary,
-                    validator: _model.emailAddressControllerValidator
+                    validator: _model.emailAddressTextControllerValidator
                         .asValidator(context),
                   ),
                 ),
@@ -214,7 +237,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      if (_model.emailAddressController.text.isEmpty) {
+                      if (_model.emailAddressTextController.text.isEmpty) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text(
@@ -225,7 +248,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                         return;
                       }
                       await authManager.resetPassword(
-                        email: _model.emailAddressController.text,
+                        email: _model.emailAddressTextController.text,
                         context: context,
                       );
                     },
@@ -240,7 +263,11 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
-                      textStyle: FlutterFlowTheme.of(context).titleSmall,
+                      textStyle:
+                          FlutterFlowTheme.of(context).titleSmall.override(
+                                fontFamily: 'Readex Pro',
+                                letterSpacing: 0.0,
+                              ),
                       elevation: 3.0,
                       borderSide: BorderSide(
                         color: Colors.transparent,

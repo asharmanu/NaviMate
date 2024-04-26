@@ -16,3 +16,6 @@ export '/forgot_password/forgot_password_widget.dart' show ForgotPasswordWidget;
 export '/edit_profile/edit_profile_widget.dart' show EditProfileWidget;
 export '/verify_email/verify_email_widget.dart' show VerifyEmailWidget;
 export '/about_us/about_us_widget.dart' show AboutUsWidget;
+export '/gen_prac_description/gen_prac_description_widget.dart'
+    show GenPracDescriptionWidget;
+export '/genpracti_copy/genpracti_copy_widget.dart' show GenpractiCopyWidget;

@@ -5,6 +5,39 @@ service cloud.firestore {
       allow create: if request.auth.uid == document;
       allow read: if request.auth.uid == document;
       allow write: if request.auth.uid == document;
+      allow delete: if request.auth.uid == document;
+    }
+
+    match /GeneralPractitioners/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /hospitals/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /hospitals/{parent}/Reviews/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/Reviews/{document} {
+      allow read: if true;
+    }
+
+
+    match /GenPracReview/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
       allow delete: if false;
     }
   }
