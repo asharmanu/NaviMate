@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -62,7 +63,10 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
             FFLocalizations.of(context).getText(
               'xighyo1w' /* General Practitioners */,
             ),
-            style: FlutterFlowTheme.of(context).headlineMedium,
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Outfit',
+                  letterSpacing: 0.0,
+                ),
           ),
           actions: [],
           centerTitle: false,
@@ -82,7 +86,10 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                     FFLocalizations.of(context).getText(
                       'tcsn6t51' /* Near Campus */,
                     ),
-                    style: FlutterFlowTheme.of(context).headlineLarge,
+                    style: FlutterFlowTheme.of(context).headlineLarge.override(
+                          fontFamily: 'Outfit',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                 ),
                 Padding(
@@ -145,19 +152,71 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Text(
-                                            FFLocalizations.of(context).getText(
-                                              'vr8yatln' /* Dr. Hagen Schmidtmann */,
+                                          StreamBuilder<
+                                              List<GeneralPractitionersRecord>>(
+                                            stream:
+                                                queryGeneralPractitionersRecord(
+                                              singleRecord: true,
                                             ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge,
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      valueColor:
+                                                          AlwaysStoppedAnimation<
+                                                              Color>(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primary,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+                                              List<GeneralPractitionersRecord>
+                                                  textGeneralPractitionersRecordList =
+                                                  snapshot.data!;
+                                              // Return an empty Container when the item does not exist.
+                                              if (snapshot.data!.isEmpty) {
+                                                return Container();
+                                              }
+                                              final textGeneralPractitionersRecord =
+                                                  textGeneralPractitionersRecordList
+                                                          .isNotEmpty
+                                                      ? textGeneralPractitionersRecordList
+                                                          .first
+                                                      : null;
+                                              return Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'vr8yatln' /* Dr. Hagen Schmidtmann */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              );
+                                            },
                                           ),
                                           Text(
                                             FFLocalizations.of(context).getText(
                                               'o24bvriz' /* Pumpenstrasse 10 */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .labelMedium,
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -178,6 +237,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
+                                                      letterSpacing: 0.0,
                                                     ),
                                               ),
                                               Align(
@@ -210,6 +270,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
@@ -259,6 +320,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
@@ -335,14 +397,22 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                               'i17281gg' /* Dr. Oliver Kahlen */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyLarge,
+                                                .bodyLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           Text(
                                             FFLocalizations.of(context).getText(
                                               '40f3gnhn' /* Reeder-Bischoff-Str. 28 */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .labelMedium,
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -363,6 +433,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
+                                                      letterSpacing: 0.0,
                                                     ),
                                               ),
                                               Align(
@@ -394,6 +465,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                                               'Readex Pro',
                                                           color:
                                                               Color(0xFF058A85),
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
@@ -440,6 +512,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                                               'Readex Pro',
                                                           color:
                                                               Color(0xFF058A85),
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
@@ -516,14 +589,22 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                               'nkwl4jso' /* Dr. Hans Martin Noltenius */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyLarge,
+                                                .bodyLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           Text(
                                             FFLocalizations.of(context).getText(
                                               '0vabqgfz' /* Gerhard-Rohlfs-Strasse 16 a */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .labelMedium,
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -544,6 +625,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
+                                                      letterSpacing: 0.0,
                                                     ),
                                               ),
                                               Align(
@@ -576,6 +658,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
@@ -625,6 +708,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),

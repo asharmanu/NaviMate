@@ -66,6 +66,7 @@ class _VerifyEmailWidgetState extends State<VerifyEmailWidget> {
                   fontFamily: 'Outfit',
                   color: FlutterFlowTheme.of(context).primaryText,
                   fontSize: 22.0,
+                  letterSpacing: 0.0,
                 ),
           ),
         ),
@@ -125,6 +126,7 @@ P... */
                 style: FlutterFlowTheme.of(context).bodyLarge.override(
                       fontFamily: 'Readex Pro',
                       fontSize: 20.0,
+                      letterSpacing: 0.0,
                     ),
               ),
             ),
@@ -170,6 +172,7 @@ P... */
                         FlutterFlowTheme.of(context).titleMedium.override(
                               fontFamily: 'Readex Pro',
                               color: Colors.white,
+                              letterSpacing: 0.0,
                             ),
                     elevation: 2.0,
                     borderSide: BorderSide(

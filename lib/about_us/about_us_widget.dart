@@ -67,6 +67,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                   fontFamily: 'Outfit',
                   color: Colors.white,
                   fontSize: 22.0,
+                  letterSpacing: 0.0,
                 ),
           ),
           actions: [],
@@ -109,7 +110,12 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                             FFLocalizations.of(context).getText(
                               'b9b4qacb' /* Members */,
                             ),
-                            style: FlutterFlowTheme.of(context).headlineMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .headlineMedium
+                                .override(
+                                  fontFamily: 'Outfit',
+                                  letterSpacing: 0.0,
+                                ),
                           ),
                         ),
                         Padding(
@@ -119,7 +125,12 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                             FFLocalizations.of(context).getText(
                               'xchy0x3w' /* Below are a list of members of... */,
                             ),
-                            style: FlutterFlowTheme.of(context).labelMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
                           ),
                         ),
                         ListView(
@@ -142,7 +153,10 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                     blurRadius: 0.0,
                                     color:
                                         FlutterFlowTheme.of(context).alternate,
-                                    offset: Offset(0.0, 1.0),
+                                    offset: Offset(
+                                      0.0,
+                                      1.0,
+                                    ),
                                   )
                                 ],
                               ),
@@ -203,7 +217,12 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyLarge,
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
@@ -223,6 +242,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
+                                                      letterSpacing: 0.0,
                                                     ),
                                               ),
                                             ),
@@ -244,7 +264,10 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                     blurRadius: 0.0,
                                     color:
                                         FlutterFlowTheme.of(context).alternate,
-                                    offset: Offset(0.0, 1.0),
+                                    offset: Offset(
+                                      0.0,
+                                      1.0,
+                                    ),
                                   )
                                 ],
                               ),
@@ -305,7 +328,12 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyLarge,
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
@@ -325,6 +353,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
+                                                      letterSpacing: 0.0,
                                                     ),
                                               ),
                                             ),
@@ -346,7 +375,10 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                     blurRadius: 0.0,
                                     color:
                                         FlutterFlowTheme.of(context).alternate,
-                                    offset: Offset(0.0, 1.0),
+                                    offset: Offset(
+                                      0.0,
+                                      1.0,
+                                    ),
                                   )
                                 ],
                               ),
@@ -407,7 +439,12 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyLarge,
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
@@ -427,6 +464,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
+                                                      letterSpacing: 0.0,
                                                     ),
                                               ),
                                             ),

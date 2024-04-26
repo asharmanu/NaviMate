@@ -63,7 +63,10 @@ class _HealthWidgetState extends State<HealthWidget> {
             FFLocalizations.of(context).getText(
               '6f3u330s' /* Health Services */,
             ),
-            style: FlutterFlowTheme.of(context).titleMedium,
+            style: FlutterFlowTheme.of(context).titleMedium.override(
+                  fontFamily: 'Readex Pro',
+                  letterSpacing: 0.0,
+                ),
           ),
           actions: [],
           centerTitle: false,
@@ -125,7 +128,7 @@ class _HealthWidgetState extends State<HealthWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('Genpracti');
+                        context.pushNamed('GenpractiCopy');
                       },
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),

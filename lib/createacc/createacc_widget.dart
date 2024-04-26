@@ -1,5 +1,4 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -30,16 +29,16 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
     super.initState();
     _model = createModel(context, () => CreateaccModel());
 
-    _model.nameController ??= TextEditingController();
+    _model.nameTextController ??= TextEditingController();
     _model.nameFocusNode ??= FocusNode();
 
-    _model.emailAddressController ??= TextEditingController();
+    _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
 
-    _model.passwordController ??= TextEditingController();
+    _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
 
-    _model.passwordConfirmController ??= TextEditingController();
+    _model.passwordConfirmTextController ??= TextEditingController();
     _model.passwordConfirmFocusNode ??= FocusNode();
   }
 
@@ -90,8 +89,12 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                   FFLocalizations.of(context).getText(
                                     '525teg6l' /* NaviMate */,
                                   ),
-                                  style:
-                                      FlutterFlowTheme.of(context).displaySmall,
+                                  style: FlutterFlowTheme.of(context)
+                                      .displaySmall
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
                               ),
                             ),
@@ -99,7 +102,12 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                               FFLocalizations.of(context).getText(
                                 'pklqzsn3' /* Create an account */,
                               ),
-                              style: FlutterFlowTheme.of(context).headlineLarge,
+                              style: FlutterFlowTheme.of(context)
+                                  .headlineLarge
+                                  .override(
+                                    fontFamily: 'Outfit',
+                                    letterSpacing: 0.0,
+                                  ),
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -108,7 +116,12 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                 FFLocalizations.of(context).getText(
                                   's41wgs6r' /* Let's get started by filling o... */,
                                 ),
-                                style: FlutterFlowTheme.of(context).labelMedium,
+                                style: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
                             ),
                           ],
@@ -136,7 +149,7 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                     child: Container(
                                       width: double.infinity,
                                       child: TextFormField(
-                                        controller: _model.nameController,
+                                        controller: _model.nameTextController,
                                         focusNode: _model.nameFocusNode,
                                         autofocus: true,
                                         autofillHints: [AutofillHints.name],
@@ -148,7 +161,11 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                           ),
                                           labelStyle:
                                               FlutterFlowTheme.of(context)
-                                                  .labelLarge,
+                                                  .labelLarge
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    letterSpacing: 0.0,
+                                                  ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
@@ -196,10 +213,14 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                                   .primaryBackground,
                                         ),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyLarge,
+                                            .bodyLarge
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
                                         keyboardType: TextInputType.name,
                                         validator: _model
-                                            .nameControllerValidator
+                                            .nameTextControllerValidator
                                             .asValidator(context),
                                       ),
                                     ),
@@ -226,6 +247,7 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                             fontFamily: 'Readex Pro',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
+                                            letterSpacing: 0.0,
                                           ),
                                       hintText:
                                           FFLocalizations.of(context).getText(
@@ -259,7 +281,7 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                       width: double.infinity,
                                       child: TextFormField(
                                         controller:
-                                            _model.emailAddressController,
+                                            _model.emailAddressTextController,
                                         focusNode: _model.emailAddressFocusNode,
                                         autofocus: true,
                                         autofillHints: [AutofillHints.email],
@@ -271,7 +293,11 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                           ),
                                           labelStyle:
                                               FlutterFlowTheme.of(context)
-                                                  .labelLarge,
+                                                  .labelLarge
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    letterSpacing: 0.0,
+                                                  ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
@@ -319,11 +345,15 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                                   .primaryBackground,
                                         ),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyLarge,
+                                            .bodyLarge
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
                                         keyboardType:
                                             TextInputType.emailAddress,
                                         validator: _model
-                                            .emailAddressControllerValidator
+                                            .emailAddressTextControllerValidator
                                             .asValidator(context),
                                       ),
                                     ),
@@ -334,7 +364,8 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                     child: Container(
                                       width: double.infinity,
                                       child: TextFormField(
-                                        controller: _model.passwordController,
+                                        controller:
+                                            _model.passwordTextController,
                                         focusNode: _model.passwordFocusNode,
                                         autofocus: true,
                                         autofillHints: [AutofillHints.password],
@@ -346,7 +377,11 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                           ),
                                           labelStyle:
                                               FlutterFlowTheme.of(context)
-                                                  .labelLarge,
+                                                  .labelLarge
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    letterSpacing: 0.0,
+                                                  ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
@@ -412,9 +447,13 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                           ),
                                         ),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyLarge,
+                                            .bodyLarge
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
                                         validator: _model
-                                            .passwordControllerValidator
+                                            .passwordTextControllerValidator
                                             .asValidator(context),
                                       ),
                                     ),
@@ -425,8 +464,8 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                     child: Container(
                                       width: double.infinity,
                                       child: TextFormField(
-                                        controller:
-                                            _model.passwordConfirmController,
+                                        controller: _model
+                                            .passwordConfirmTextController,
                                         focusNode:
                                             _model.passwordConfirmFocusNode,
                                         autofocus: true,
@@ -440,7 +479,11 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                           ),
                                           labelStyle:
                                               FlutterFlowTheme.of(context)
-                                                  .labelLarge,
+                                                  .labelLarge
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    letterSpacing: 0.0,
+                                                  ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
@@ -508,10 +551,14 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                           ),
                                         ),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyLarge,
+                                            .bodyLarge
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
                                         minLines: 1,
                                         validator: _model
-                                            .passwordConfirmControllerValidator
+                                            .passwordConfirmTextControllerValidator
                                             .asValidator(context),
                                       ),
                                     ),
@@ -522,8 +569,9 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                     child: FFButtonWidget(
                                       onPressed: () async {
                                         GoRouter.of(context).prepareAuthEvent();
-                                        if (_model.passwordController.text !=
-                                            _model.passwordConfirmController
+                                        if (_model
+                                                .passwordTextController.text !=
+                                            _model.passwordConfirmTextController
                                                 .text) {
                                           ScaffoldMessenger.of(context)
                                               .showSnackBar(
@@ -539,31 +587,13 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                         final user = await authManager
                                             .createAccountWithEmail(
                                           context,
-                                          _model.emailAddressController.text,
-                                          _model.passwordController.text,
+                                          _model
+                                              .emailAddressTextController.text,
+                                          _model.passwordTextController.text,
                                         );
                                         if (user == null) {
                                           return;
                                         }
-
-                                        await UsersRecord.collection
-                                            .doc(user.uid)
-                                            .update({
-                                          ...createUsersRecordData(
-                                            university:
-                                                _model.universityDropDownValue,
-                                            displayName:
-                                                _model.nameController.text,
-                                            email: _model
-                                                .emailAddressController.text,
-                                          ),
-                                          ...mapToFirestore(
-                                            {
-                                              'created_time':
-                                                  FieldValue.serverTimestamp(),
-                                            },
-                                          ),
-                                        });
 
                                         await authManager
                                             .sendEmailVerification();
@@ -589,6 +619,7 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                             .override(
                                               fontFamily: 'Readex Pro',
                                               color: Colors.white,
+                                              letterSpacing: 0.0,
                                             ),
                                         elevation: 3.0,
                                         borderSide: BorderSide(
@@ -608,8 +639,8 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 12.0),
                                       child: RichText(
-                                        textScaleFactor: MediaQuery.of(context)
-                                            .textScaleFactor,
+                                        textScaler:
+                                            MediaQuery.of(context).textScaler,
                                         text: TextSpan(
                                           children: [
                                             TextSpan(
@@ -632,6 +663,7 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primary,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                               mouseCursor:
@@ -643,7 +675,11 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                             )
                                           ],
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ),
@@ -700,7 +736,10 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                   BoxShadow(
                                     blurRadius: 3.0,
                                     color: Color(0x2E000000),
-                                    offset: Offset(0.0, 2.0),
+                                    offset: Offset(
+                                      0.0,
+                                      2.0,
+                                    ),
                                   )
                                 ],
                                 borderRadius: BorderRadius.circular(8.0),
@@ -755,7 +794,12 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .titleMedium,
+                                                        .titleMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ],
                                           ),
@@ -771,7 +815,12 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodySmall,
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                               Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -787,10 +836,14 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                                           .getText(
                                                         'dli6n8at' /* 5 */,
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineMedium,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                     ),
                                                   ),
                                                   Icon(
@@ -821,7 +874,12 @@ class _CreateaccWidgetState extends State<CreateaccWidget> {
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ],

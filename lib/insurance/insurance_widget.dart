@@ -67,6 +67,7 @@ class _InsuranceWidgetState extends State<InsuranceWidget> {
                   fontFamily: 'Outfit',
                   color: Colors.white,
                   fontSize: 22.0,
+                  letterSpacing: 0.0,
                 ),
           ),
           actions: [],
@@ -88,6 +89,7 @@ class _InsuranceWidgetState extends State<InsuranceWidget> {
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
                         fontFamily: 'Outfit',
                         color: FlutterFlowTheme.of(context).primaryText,
+                        letterSpacing: 0.0,
                       ),
                 ),
               ),
@@ -145,6 +147,7 @@ class _InsuranceWidgetState extends State<InsuranceWidget> {
                                         fontFamily: 'Readex Pro',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
+                                        letterSpacing: 0.0,
                                       ),
                                 ),
                               ),
@@ -192,6 +195,7 @@ class _InsuranceWidgetState extends State<InsuranceWidget> {
                                       fontFamily: 'Readex Pro',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
+                                      letterSpacing: 0.0,
                                     ),
                               ),
                             ),

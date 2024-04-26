@@ -13,8 +13,6 @@ class EmergencyModel extends FlutterFlowModel<EmergencyWidget> {
 
   final unfocusNode = FocusNode();
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -22,8 +20,4 @@ class EmergencyModel extends FlutterFlowModel<EmergencyWidget> {
   void dispose() {
     unfocusNode.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

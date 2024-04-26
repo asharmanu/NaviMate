@@ -25,7 +25,8 @@ class _NotificationWidgetState extends State<NotificationWidget> {
     super.initState();
     _model = createModel(context, () => NotificationModel());
 
-    _model.expandableController = ExpandableController(initialExpanded: false);
+    _model.expandableExpandableController =
+        ExpandableController(initialExpanded: false);
   }
 
   @override
@@ -55,6 +56,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                   fontFamily: 'Outfit',
                   color: Color(0xFF14181B),
                   fontSize: 24.0,
+                  letterSpacing: 0.0,
                   fontWeight: FontWeight.normal,
                 ),
           ),
@@ -76,7 +78,10 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                     BoxShadow(
                       blurRadius: 0.0,
                       color: Color(0xFFE0E3E7),
-                      offset: Offset(0.0, 1.0),
+                      offset: Offset(
+                        0.0,
+                        1.0,
+                      ),
                     )
                   ],
                   borderRadius: BorderRadius.circular(0.0),
@@ -96,7 +101,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                   height: 24.0,
                   color: Colors.white,
                   child: ExpandableNotifier(
-                    controller: _model.expandableController,
+                    controller: _model.expandableExpandableController,
                     child: ExpandablePanel(
                       header: Padding(
                         padding:
@@ -111,6 +116,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                 fontFamily: 'Outfit',
                                 color: Colors.black,
                                 fontSize: 18.0,
+                                letterSpacing: 0.0,
                                 fontWeight: FontWeight.normal,
                               ),
                         ),
@@ -137,6 +143,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                   .override(
                                     fontFamily: 'Readex Pro',
                                     color: Color(0x8A000000),
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                           ),

@@ -32,14 +32,14 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
     super.initState();
     _model = createModel(context, () => EditProfileModel());
 
-    _model.yourNameController ??=
+    _model.yourNameTextController ??=
         TextEditingController(text: currentUserDisplayName);
     _model.yourNameFocusNode ??= FocusNode();
 
-    _model.countryController ??= TextEditingController();
+    _model.countryTextController ??= TextEditingController();
     _model.countryFocusNode ??= FocusNode();
 
-    _model.birthDateController ??= TextEditingController();
+    _model.birthDateTextController ??= TextEditingController();
     _model.birthDateFocusNode ??= FocusNode();
   }
 
@@ -79,6 +79,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
           style: FlutterFlowTheme.of(context).titleSmall.override(
                 fontFamily: 'Readex Pro',
                 fontSize: 21.0,
+                letterSpacing: 0.0,
               ),
         ),
         actions: [],
@@ -208,7 +209,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
               padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
               child: AuthUserStreamWidget(
                 builder: (context) => TextFormField(
-                  controller: _model.yourNameController,
+                  controller: _model.yourNameTextController,
                   focusNode: _model.yourNameFocusNode,
                   textCapitalization: TextCapitalization.words,
                   obscureText: false,
@@ -216,8 +217,16 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                     labelText: FFLocalizations.of(context).getText(
                       'p7vq1mu6' /* Name Surname */,
                     ),
-                    labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                    hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                    labelStyle:
+                        FlutterFlowTheme.of(context).labelMedium.override(
+                              fontFamily: 'Readex Pro',
+                              letterSpacing: 0.0,
+                            ),
+                    hintStyle:
+                        FlutterFlowTheme.of(context).labelMedium.override(
+                              fontFamily: 'Readex Pro',
+                              letterSpacing: 0.0,
+                            ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).alternate,
@@ -251,16 +260,19 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                     contentPadding:
                         EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                   ),
-                  style: FlutterFlowTheme.of(context).bodyMedium,
-                  validator:
-                      _model.yourNameControllerValidator.asValidator(context),
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
+                  validator: _model.yourNameTextControllerValidator
+                      .asValidator(context),
                 ),
               ),
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
               child: TextFormField(
-                controller: _model.countryController,
+                controller: _model.countryTextController,
                 focusNode: _model.countryFocusNode,
                 textCapitalization: TextCapitalization.words,
                 obscureText: false,
@@ -268,8 +280,14 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                   labelText: FFLocalizations.of(context).getText(
                     '4ushal3e' /* Country from */,
                   ),
-                  labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                  hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                  labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
+                  hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).alternate,
@@ -303,24 +321,33 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                   contentPadding:
                       EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                 ),
-                style: FlutterFlowTheme.of(context).bodyMedium,
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
                 validator:
-                    _model.countryControllerValidator.asValidator(context),
+                    _model.countryTextControllerValidator.asValidator(context),
               ),
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 12.0),
               child: TextFormField(
-                controller: _model.birthDateController,
+                controller: _model.birthDateTextController,
                 focusNode: _model.birthDateFocusNode,
                 textCapitalization: TextCapitalization.sentences,
                 obscureText: false,
                 decoration: InputDecoration(
-                  labelStyle: FlutterFlowTheme.of(context).labelMedium,
+                  labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                   hintText: FFLocalizations.of(context).getText(
                     '5q0diffm' /* Your birth date */,
                   ),
-                  hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                  hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).alternate,
@@ -354,11 +381,14 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                   contentPadding:
                       EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                 ),
-                style: FlutterFlowTheme.of(context).bodyMedium,
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
                 textAlign: TextAlign.start,
                 keyboardType: TextInputType.datetime,
-                validator:
-                    _model.birthDateControllerValidator.asValidator(context),
+                validator: _model.birthDateTextControllerValidator
+                    .asValidator(context),
                 inputFormatters: [
                   FilteringTextInputFormatter.allow(RegExp('[0-9]'))
                 ],
@@ -385,6 +415,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                             FlutterFlowTheme.of(context).headlineLarge.override(
                                   fontFamily: 'Outfit',
                                   fontSize: 32.0,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                 ),
                         pickerBackgroundColor:
@@ -412,7 +443,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                     });
                   }
                   setState(() {
-                    _model.birthDateController?.text = valueOrDefault<String>(
+                    _model.birthDateTextController?.text =
+                        valueOrDefault<String>(
                       dateTimeFormat(
                         'd/M/y',
                         _model.datePicked,
@@ -436,6 +468,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                         fontFamily: 'Readex Pro',
                         color: FlutterFlowTheme.of(context).secondaryText,
                         fontSize: 14.0,
+                        letterSpacing: 0.0,
                         fontWeight: FontWeight.normal,
                       ),
                   borderSide: BorderSide(
@@ -455,15 +488,15 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                     if (_model.uploadedFileUrl ==
                         'https://firebasestorage.googleapis.com/v0/b/trial-gs.appspot.com/o/users%2FIMG_20230830_121639.jpg?alt=media&token=a16265b9-bb32-4c36-a24b-3df2d5b350e5') {
                       await currentUserReference!.update(createUsersRecordData(
-                        displayName: _model.yourNameController.text,
-                        country: _model.countryController.text,
+                        displayName: _model.yourNameTextController.text,
+                        country: _model.countryTextController.text,
                         birthDate: _model.datePicked,
                       ));
                     } else {
                       await currentUserReference!.update(createUsersRecordData(
-                        displayName: _model.yourNameController.text,
+                        displayName: _model.yourNameTextController.text,
                         photoUrl: _model.uploadedFileUrl,
-                        country: _model.countryController.text,
+                        country: _model.countryTextController.text,
                         birthDate: _model.datePicked,
                       ));
                     }
@@ -484,6 +517,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                         FlutterFlowTheme.of(context).titleMedium.override(
                               fontFamily: 'Readex Pro',
                               color: Colors.white,
+                              letterSpacing: 0.0,
                             ),
                     elevation: 2.0,
                     borderSide: BorderSide(

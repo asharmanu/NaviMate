@@ -12,9 +12,7 @@ class NotificationModel extends FlutterFlowModel<NotificationWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for Expandable widget.
-  late ExpandableController expandableController;
-
-  /// Initialization and disposal methods.
+  late ExpandableController expandableExpandableController;
 
   @override
   void initState(BuildContext context) {}
@@ -22,10 +20,6 @@ class NotificationModel extends FlutterFlowModel<NotificationWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
-    expandableController.dispose();
+    expandableExpandableController.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }
