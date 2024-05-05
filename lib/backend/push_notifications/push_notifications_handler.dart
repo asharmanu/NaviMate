@@ -120,7 +120,6 @@ final parametersBuilderMap =
   'TKinsur': ParameterData.none(),
   'AOKInsur': ParameterData.none(),
   'Specialist': ParameterData.none(),
-  'Hospitals': ParameterData.none(),
   'ForgotPassword': ParameterData.none(),
   'EditProfile': ParameterData.none(),
   'VerifyEmail': ParameterData.none(),
@@ -133,28 +132,15 @@ final parametersBuilderMap =
                   'commentparameter', GeneralPractitionersRecord.fromSnapshot),
         },
       ),
-  'GenpractiCopyCopy': ParameterData.none(),
+  'GenpractiMainPage': ParameterData.none(),
   'TermsConditions': ParameterData.none(),
-  'MapsTrial': ParameterData.none(),
+  'MapsGenPrac': ParameterData.none(),
   'writeReview': (data) async => ParameterData(
         allParams: {
           'reff': getParameter<DocumentReference>(data, 'reff'),
         },
       ),
   'SpecialistsPage': ParameterData.none(),
-  'SpecialistsPageListNOTWORKNG': (data) async => ParameterData(
-        allParams: {
-          'speciality': getParameter<String>(data, 'speciality'),
-        },
-      ),
-  'GenPracDescriptionNotUsing': (data) async => ParameterData(
-        allParams: {
-          'ref': getParameter<DocumentReference>(data, 'ref'),
-          'commentparameter':
-              await getDocumentParameter<GeneralPractitionersRecord>(data,
-                  'commentparameter', GeneralPractitionersRecord.fromSnapshot),
-        },
-      ),
   'makeReminder': ParameterData.none(),
   'specialistSearchFinal': (data) async => ParameterData(
         allParams: {
@@ -174,6 +160,8 @@ final parametersBuilderMap =
           'refDoc': getParameter<DocumentReference>(data, 'refDoc'),
         },
       ),
+  'MapsSpecialists': ParameterData.none(),
+  'MapsHospitals': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

@@ -94,7 +94,7 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
-                    context.pushNamed('MapsTrial');
+                    context.pushNamed('MapsGenPrac');
                   },
                   child: FaIcon(
                     FontAwesomeIcons.mapMarkedAlt,
@@ -131,7 +131,7 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                             focusNode: _model.textFieldFocusNode,
                             onFieldSubmitted: (_) async {
                               while (true) {
-                                await queryGeneralPractitionersRecordOnce()
+                                await queryHospitalsRecordOnce()
                                     .then(
                                       (records) => _model
                                           .simpleSearchResults = TextSearch(
@@ -140,7 +140,7 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                                               (record) =>
                                                   TextSearchItem.fromTerms(
                                                       record,
-                                                      [record.nameSurname]),
+                                                      [record.hospitalName]),
                                             )
                                             .toList(),
                                       )
@@ -153,7 +153,7 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                                     .whenComplete(() => setState(() {}));
 
                                 setState(() {
-                                  FFAppState().showFullList = false;
+                                  FFAppState().showFullList3 = false;
                                 });
                               }
                             },
@@ -554,9 +554,9 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'GenPracDescription',
+                                                          'HospitalsDescription',
                                                           queryParameters: {
-                                                            'ref':
+                                                            'refDoc':
                                                                 serializeParam(
                                                               childrenItem
                                                                   .reference,
@@ -575,7 +575,7 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                                                         children: [
                                                           Text(
                                                             childrenItem
-                                                                .nameSurname,
+                                                                .hospitalName,
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyLarge
@@ -643,7 +643,7 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                                                                       () async {
                                                                     await launchURL(
                                                                         childrenItem
-                                                                            .mapLocationUrl);
+                                                                            .locationUrl);
                                                                   },
                                                                   child: Text(
                                                                     FFLocalizations.of(
@@ -755,18 +755,16 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                               },
                             ),
                           ),
-                          if (FFAppState().showFullList &&
+                          if (FFAppState().showFullList3 &&
                               (_model.sortByValue != 'Reviews'))
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 8.0, 16.0, 8.0),
-                              child: StreamBuilder<
-                                  List<GeneralPractitionersRecord>>(
-                                stream: queryGeneralPractitionersRecord(
-                                  queryBuilder: (generalPractitionersRecord) =>
-                                      generalPractitionersRecord
-                                          .whereArrayContainsAny('Filter',
-                                              _model.choiceChipsValues),
+                              child: StreamBuilder<List<HospitalsRecord>>(
+                                stream: queryHospitalsRecord(
+                                  queryBuilder: (hospitalsRecord) =>
+                                      hospitalsRecord.whereArrayContainsAny(
+                                          'Filter', _model.choiceChipsValues),
                                 ),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
@@ -785,16 +783,16 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                                       ),
                                     );
                                   }
-                                  List<GeneralPractitionersRecord>
-                                      columnGeneralPractitionersRecordList =
+                                  List<HospitalsRecord>
+                                      columnHospitalsRecordList =
                                       snapshot.data!;
                                   return Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: List.generate(
-                                        columnGeneralPractitionersRecordList
-                                            .length, (columnIndex) {
-                                      final columnGeneralPractitionersRecord =
-                                          columnGeneralPractitionersRecordList[
+                                        columnHospitalsRecordList.length,
+                                        (columnIndex) {
+                                      final columnHospitalsRecord =
+                                          columnHospitalsRecordList[
                                               columnIndex];
                                       return Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -874,11 +872,11 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'GenPracDescription',
+                                                            'HospitalsDescription',
                                                             queryParameters: {
-                                                              'ref':
+                                                              'refDoc':
                                                                   serializeParam(
-                                                                columnGeneralPractitionersRecord
+                                                                columnHospitalsRecord
                                                                     .reference,
                                                                 ParamType
                                                                     .DocumentReference,
@@ -894,8 +892,8 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                                                                   .start,
                                                           children: [
                                                             Text(
-                                                              columnGeneralPractitionersRecord
-                                                                  .nameSurname,
+                                                              columnHospitalsRecord
+                                                                  .hospitalName,
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyLarge
@@ -907,7 +905,7 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                                                                   ),
                                                             ),
                                                             Text(
-                                                              columnGeneralPractitionersRecord
+                                                              columnHospitalsRecord
                                                                   .address,
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -928,7 +926,7 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                                                                       .spaceBetween,
                                                               children: [
                                                                 Text(
-                                                                  columnGeneralPractitionersRecord
+                                                                  columnHospitalsRecord
                                                                       .postalCode,
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
@@ -964,8 +962,8 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                                                                     onTap:
                                                                         () async {
                                                                       await launchURL(
-                                                                          columnGeneralPractitionersRecord
-                                                                              .mapLocationUrl);
+                                                                          columnHospitalsRecord
+                                                                              .locationUrl);
                                                                     },
                                                                     child: Text(
                                                                       FFLocalizations.of(
@@ -1028,13 +1026,16 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                                                                             .transparent,
                                                                     onTap:
                                                                         () async {
-                                                                      await launchURL(
-                                                                          columnGeneralPractitionersRecord
-                                                                              .mapLocationUrl);
+                                                                      await launchURL((String
+                                                                          phone) {
+                                                                        return "tel:+$phone";
+                                                                      }(columnHospitalsRecord
+                                                                          .phoneNumber
+                                                                          .toString()));
                                                                     },
                                                                     child: Text(
                                                                       formatNumber(
-                                                                        columnGeneralPractitionersRecord
+                                                                        columnHospitalsRecord
                                                                             .phoneNumber,
                                                                         formatType:
                                                                             FormatType.custom,
@@ -1075,19 +1076,16 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                                 },
                               ),
                             ),
-                          if (FFAppState().showFullList &&
+                          if (FFAppState().showFullList3 &&
                               (_model.sortByValue == 'Reviews'))
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 8.0, 16.0, 8.0),
-                              child: StreamBuilder<
-                                  List<GeneralPractitionersRecord>>(
-                                stream: queryGeneralPractitionersRecord(
-                                  queryBuilder: (generalPractitionersRecord) =>
-                                      generalPractitionersRecord
-                                          .whereArrayContainsAny('Filter',
-                                              _model.choiceChipsValues)
-                                          .orderBy('netLike', descending: true),
+                              child: StreamBuilder<List<HospitalsRecord>>(
+                                stream: queryHospitalsRecord(
+                                  queryBuilder: (hospitalsRecord) =>
+                                      hospitalsRecord.whereArrayContainsAny(
+                                          'Filter', _model.choiceChipsValues),
                                 ),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
@@ -1106,16 +1104,16 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                                       ),
                                     );
                                   }
-                                  List<GeneralPractitionersRecord>
-                                      columnGeneralPractitionersRecordList =
+                                  List<HospitalsRecord>
+                                      columnHospitalsRecordList =
                                       snapshot.data!;
                                   return Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: List.generate(
-                                        columnGeneralPractitionersRecordList
-                                            .length, (columnIndex) {
-                                      final columnGeneralPractitionersRecord =
-                                          columnGeneralPractitionersRecordList[
+                                        columnHospitalsRecordList.length,
+                                        (columnIndex) {
+                                      final columnHospitalsRecord =
+                                          columnHospitalsRecordList[
                                               columnIndex];
                                       return Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1195,11 +1193,11 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'GenPracDescription',
+                                                            'HospitalsDescription',
                                                             queryParameters: {
-                                                              'ref':
+                                                              'refDoc':
                                                                   serializeParam(
-                                                                columnGeneralPractitionersRecord
+                                                                columnHospitalsRecord
                                                                     .reference,
                                                                 ParamType
                                                                     .DocumentReference,
@@ -1215,8 +1213,8 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                                                                   .start,
                                                           children: [
                                                             Text(
-                                                              columnGeneralPractitionersRecord
-                                                                  .nameSurname,
+                                                              columnHospitalsRecord
+                                                                  .hospitalName,
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyLarge
@@ -1228,7 +1226,7 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                                                                   ),
                                                             ),
                                                             Text(
-                                                              columnGeneralPractitionersRecord
+                                                              columnHospitalsRecord
                                                                   .address,
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -1249,7 +1247,7 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                                                                       .spaceBetween,
                                                               children: [
                                                                 Text(
-                                                                  columnGeneralPractitionersRecord
+                                                                  columnHospitalsRecord
                                                                       .postalCode,
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
@@ -1285,8 +1283,8 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                                                                     onTap:
                                                                         () async {
                                                                       await launchURL(
-                                                                          columnGeneralPractitionersRecord
-                                                                              .mapLocationUrl);
+                                                                          columnHospitalsRecord
+                                                                              .locationUrl);
                                                                     },
                                                                     child: Text(
                                                                       FFLocalizations.of(
@@ -1350,15 +1348,15 @@ class _HospitalsMainPageWidgetState extends State<HospitalsMainPageWidget> {
                                                                     onTap:
                                                                         () async {
                                                                       await launchURL((String
-                                                                          var1) {
-                                                                        return "tel:+$var1";
-                                                                      }(columnGeneralPractitionersRecord
+                                                                          phone) {
+                                                                        return "tel:+$phone";
+                                                                      }(columnHospitalsRecord
                                                                           .phoneNumber
                                                                           .toString()));
                                                                     },
                                                                     child: Text(
                                                                       formatNumber(
-                                                                        columnGeneralPractitionersRecord
+                                                                        columnHospitalsRecord
                                                                             .phoneNumber,
                                                                         formatType:
                                                                             FormatType.custom,

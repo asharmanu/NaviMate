@@ -9,14 +9,14 @@ service cloud.firestore {
     }
 
     match /GeneralPractitioners/{document} {
-      allow create: if true;
+      allow create: if false;
       allow read: if true;
       allow write: if false;
       allow delete: if false;
     }
 
     match /hospitals/{document} {
-      allow create: if true;
+      allow create: if false;
       allow read: if true;
       allow write: if false;
       allow delete: if false;
@@ -37,21 +37,21 @@ service cloud.firestore {
     }
 
     match /Specialists/{document} {
-      allow create: if true;
+      allow create: if false;
       allow read: if true;
       allow write: if false;
       allow delete: if false;
     }
 
     match /Specialist_Collection/{document} {
-      allow create: if true;
+      allow create: if false;
       allow read: if true;
       allow write: if false;
       allow delete: if false;
     }
 
     match /appointments/{document} {
-      allow create: if true;
+      allow create: if request.resource.data.user == /databases/$(database)/documents/users/$(request.auth.uid);
       allow read: if true;
       allow write: if false;
       allow delete: if false;

@@ -7,7 +7,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'edit_profile_model.dart';
 export 'edit_profile_model.dart';
 
@@ -32,11 +31,9 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
         TextEditingController(text: currentUserDisplayName);
     _model.yourNameFocusNode ??= FocusNode();
 
-    _model.countryTextController ??= TextEditingController();
+    _model.countryTextController ??= TextEditingController(
+        text: valueOrDefault(currentUserDocument?.country, ''));
     _model.countryFocusNode ??= FocusNode();
-
-    _model.birthDateTextController ??= TextEditingController();
-    _model.birthDateFocusNode ??= FocusNode();
   }
 
   @override
@@ -119,11 +116,6 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
 
                             var downloadUrls = <String>[];
                             try {
-                              showUploadMessage(
-                                context,
-                                'Uploading file...',
-                                showLoading: true,
-                              );
                               selectedUploadedFiles = selectedMedia
                                   .map((m) => FFUploadedFile(
                                         name: m.storagePath.split('/').last,
@@ -144,8 +136,6 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                   .map((u) => u!)
                                   .toList();
                             } finally {
-                              ScaffoldMessenger.of(context)
-                                  .hideCurrentSnackBar();
                               _model.isDataUploading = false;
                             }
                             if (selectedUploadedFiles.length ==
@@ -156,11 +146,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                     selectedUploadedFiles.first;
                                 _model.uploadedFileUrl = downloadUrls.first;
                               });
-                              showUploadMessage(context, 'Success!');
                             } else {
                               setState(() {});
-                              showUploadMessage(
-                                  context, 'Failed to upload data');
                               return;
                             }
                           }
@@ -256,7 +243,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                     contentPadding:
                         const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                   ),
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                  style: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Readex Pro',
                         letterSpacing: 0.0,
                       ),
@@ -267,211 +254,175 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
             ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
-              child: TextFormField(
-                controller: _model.countryTextController,
-                focusNode: _model.countryFocusNode,
-                textCapitalization: TextCapitalization.words,
-                obscureText: false,
-                decoration: InputDecoration(
-                  labelText: FFLocalizations.of(context).getText(
-                    '4ushal3e' /* Country from */,
+              child: AuthUserStreamWidget(
+                builder: (context) => TextFormField(
+                  controller: _model.countryTextController,
+                  focusNode: _model.countryFocusNode,
+                  textCapitalization: TextCapitalization.words,
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    labelText: FFLocalizations.of(context).getText(
+                      '4ushal3e' /* Country from */,
+                    ),
+                    labelStyle:
+                        FlutterFlowTheme.of(context).labelMedium.override(
+                              fontFamily: 'Readex Pro',
+                              letterSpacing: 0.0,
+                            ),
+                    hintStyle:
+                        FlutterFlowTheme.of(context).labelMedium.override(
+                              fontFamily: 'Readex Pro',
+                              letterSpacing: 0.0,
+                            ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).alternate,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).primary,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).error,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).error,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    filled: true,
+                    fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                    contentPadding:
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                   ),
-                  labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                  style: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Readex Pro',
                         letterSpacing: 0.0,
                       ),
-                  hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Readex Pro',
-                        letterSpacing: 0.0,
-                      ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).alternate,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).primary,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  errorBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).error,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  focusedErrorBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).error,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  filled: true,
-                  fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                  contentPadding:
-                      const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
+                  validator: _model.countryTextControllerValidator
+                      .asValidator(context),
                 ),
-                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Readex Pro',
-                      letterSpacing: 0.0,
-                    ),
-                validator:
-                    _model.countryTextControllerValidator.asValidator(context),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 12.0),
-              child: TextFormField(
-                controller: _model.birthDateTextController,
-                focusNode: _model.birthDateFocusNode,
-                textCapitalization: TextCapitalization.sentences,
-                obscureText: false,
-                decoration: InputDecoration(
-                  labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Readex Pro',
-                        letterSpacing: 0.0,
-                      ),
-                  hintText: FFLocalizations.of(context).getText(
-                    '5q0diffm' /* Your birth date */,
-                  ),
-                  hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Readex Pro',
-                        letterSpacing: 0.0,
-                      ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).alternate,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).primary,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  errorBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).error,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  focusedErrorBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).error,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  filled: true,
-                  fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                  contentPadding:
-                      const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
-                ),
-                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Readex Pro',
-                      letterSpacing: 0.0,
-                    ),
-                textAlign: TextAlign.start,
-                keyboardType: TextInputType.datetime,
-                validator: _model.birthDateTextControllerValidator
-                    .asValidator(context),
-                inputFormatters: [
-                  FilteringTextInputFormatter.allow(RegExp('[0-9]'))
-                ],
               ),
             ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
-              child: FFButtonWidget(
-                onPressed: () async {
-                  final datePickedDate = await showDatePicker(
-                    context: context,
-                    initialDate: getCurrentTimestamp,
-                    firstDate: DateTime(1900),
-                    lastDate: getCurrentTimestamp,
-                    builder: (context, child) {
-                      return wrapInMaterialDatePickerTheme(
-                        context,
-                        child!,
-                        headerBackgroundColor:
-                            FlutterFlowTheme.of(context).primary,
-                        headerForegroundColor:
-                            FlutterFlowTheme.of(context).info,
-                        headerTextStyle:
-                            FlutterFlowTheme.of(context).headlineLarge.override(
+              child: Container(
+                height: 60.0,
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(12.0),
+                    bottomRight: Radius.circular(12.0),
+                    topLeft: Radius.circular(12.0),
+                    topRight: Radius.circular(12.0),
+                  ),
+                  border: Border.all(
+                    color: FlutterFlowTheme.of(context).alternate,
+                    width: 2.0,
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                  child: InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      final datePickedDate = await showDatePicker(
+                        context: context,
+                        initialDate: getCurrentTimestamp,
+                        firstDate: DateTime(1900),
+                        lastDate: getCurrentTimestamp,
+                        builder: (context, child) {
+                          return wrapInMaterialDatePickerTheme(
+                            context,
+                            child!,
+                            headerBackgroundColor:
+                                FlutterFlowTheme.of(context).primary,
+                            headerForegroundColor:
+                                FlutterFlowTheme.of(context).info,
+                            headerTextStyle: FlutterFlowTheme.of(context)
+                                .headlineLarge
+                                .override(
                                   fontFamily: 'Outfit',
                                   fontSize: 32.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                 ),
-                        pickerBackgroundColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        pickerForegroundColor:
-                            FlutterFlowTheme.of(context).primaryText,
-                        selectedDateTimeBackgroundColor:
-                            FlutterFlowTheme.of(context).primary,
-                        selectedDateTimeForegroundColor:
-                            FlutterFlowTheme.of(context).info,
-                        actionButtonForegroundColor:
-                            FlutterFlowTheme.of(context).primaryText,
-                        iconSize: 24.0,
+                            pickerBackgroundColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            pickerForegroundColor:
+                                FlutterFlowTheme.of(context).primaryText,
+                            selectedDateTimeBackgroundColor:
+                                FlutterFlowTheme.of(context).primary,
+                            selectedDateTimeForegroundColor:
+                                FlutterFlowTheme.of(context).info,
+                            actionButtonForegroundColor:
+                                FlutterFlowTheme.of(context).primaryText,
+                            iconSize: 24.0,
+                          );
+                        },
                       );
-                    },
-                  );
 
-                  if (datePickedDate != null) {
-                    safeSetState(() {
-                      _model.datePicked = DateTime(
-                        datePickedDate.year,
-                        datePickedDate.month,
-                        datePickedDate.day,
-                      );
-                    });
-                  }
-                  setState(() {
-                    _model.birthDateTextController?.text =
-                        valueOrDefault<String>(
-                      dateTimeFormat(
-                        'd/M/y',
-                        _model.datePicked,
-                        locale: FFLocalizations.of(context).languageCode,
-                      ),
-                      '01/01/2000',
-                    );
-                  });
-                },
-                text: FFLocalizations.of(context).getText(
-                  '2gywhbze' /* Your birth date */,
-                ),
-                options: FFButtonOptions(
-                  width: MediaQuery.sizeOf(context).width * 1.0,
-                  height: 53.0,
-                  padding: const EdgeInsets.all(0.0),
-                  iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Readex Pro',
-                        color: FlutterFlowTheme.of(context).secondaryText,
-                        fontSize: 14.0,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.normal,
-                      ),
-                  borderSide: BorderSide(
-                    color: FlutterFlowTheme.of(context).alternate,
-                    width: 2.0,
+                      if (datePickedDate != null) {
+                        safeSetState(() {
+                          _model.datePicked = DateTime(
+                            datePickedDate.year,
+                            datePickedDate.month,
+                            datePickedDate.day,
+                          );
+                        });
+                      }
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              10.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            valueOrDefault<String>(
+                              dateTimeFormat(
+                                'yMMMd',
+                                _model.datePicked,
+                                locale:
+                                    FFLocalizations.of(context).languageCode,
+                              ),
+                              'Date / Time',
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 3.0, 0.0),
+                          child: Icon(
+                            Icons.calendar_month,
+                            color: FlutterFlowTheme.of(context).primary,
+                            size: 24.0,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                  borderRadius: BorderRadius.circular(8.0),
                 ),
               ),
             ),
@@ -491,7 +442,11 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                         displayName: _model.yourNameTextController.text,
                         photoUrl: _model.uploadedFileUrl,
                         country: _model.countryTextController.text,
-                        birthDate: _model.datePicked?.toString(),
+                        birthDate: dateTimeFormat(
+                          'yMMMd',
+                          _model.datePicked,
+                          locale: FFLocalizations.of(context).languageCode,
+                        ),
                       ));
                     }
 

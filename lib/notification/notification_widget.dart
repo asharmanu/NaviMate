@@ -171,7 +171,18 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                             focusColor: Colors.transparent,
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
-                                            onTap: () async {},
+                                            onTap: () async {
+                                              context.pushNamed(
+                                                'GenPracDescription',
+                                                queryParameters: {
+                                                  'ref': serializeParam(
+                                                    containerGeneralPractitionersRecord
+                                                        .reference,
+                                                    ParamType.DocumentReference,
+                                                  ),
+                                                }.withoutNulls,
+                                              );
+                                            },
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -240,7 +251,11 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                                             Colors.transparent,
                                                         highlightColor:
                                                             Colors.transparent,
-                                                        onTap: () async {},
+                                                        onTap: () async {
+                                                          await launchURL(
+                                                              containerGeneralPractitionersRecord
+                                                                  .mapLocationUrl);
+                                                        },
                                                         child: Text(
                                                           FFLocalizations.of(
                                                                   context)

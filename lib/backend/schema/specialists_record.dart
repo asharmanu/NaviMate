@@ -51,11 +51,6 @@ class SpecialistsRecord extends FirestoreRecord {
   LatLng? get locationLanLng => _locationLanLng;
   bool hasLocationLanLng() => _locationLanLng != null;
 
-  // "number" field.
-  String? _number;
-  String get number => _number ?? '';
-  bool hasNumber() => _number != null;
-
   // "email" field.
   String? _email;
   String get email => _email ?? '';
@@ -106,6 +101,16 @@ class SpecialistsRecord extends FirestoreRecord {
   String get website => _website ?? '';
   bool hasWebsite() => _website != null;
 
+  // "phone_number" field.
+  int? _phoneNumber;
+  int get phoneNumber => _phoneNumber ?? 0;
+  bool hasPhoneNumber() => _phoneNumber != null;
+
+  // "clinic" field.
+  String? _clinic;
+  String get clinic => _clinic ?? '';
+  bool hasClinic() => _clinic != null;
+
   void _initializeFields() {
     _nameSurname = snapshotData['name_surname'] as String?;
     _filter = getDataList(snapshotData['Filter']);
@@ -114,7 +119,6 @@ class SpecialistsRecord extends FirestoreRecord {
     _postalCode = snapshotData['postal_code'] as String?;
     _locationUrl = snapshotData['location_url'] as String?;
     _locationLanLng = snapshotData['location_LanLng'] as LatLng?;
-    _number = snapshotData['number'] as String?;
     _email = snapshotData['email'] as String?;
     _openHours = snapshotData['open_hours'] as String?;
     _likedBy = getDataList(snapshotData['Liked_by']);
@@ -125,6 +129,8 @@ class SpecialistsRecord extends FirestoreRecord {
     _insuredBy = snapshotData['insured_by'] as String?;
     _appointment = snapshotData['appointment'] as String?;
     _website = snapshotData['website'] as String?;
+    _phoneNumber = castToType<int>(snapshotData['phone_number']);
+    _clinic = snapshotData['clinic'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -168,7 +174,6 @@ Map<String, dynamic> createSpecialistsRecordData({
   String? postalCode,
   String? locationUrl,
   LatLng? locationLanLng,
-  String? number,
   String? email,
   String? openHours,
   int? netLike,
@@ -178,6 +183,8 @@ Map<String, dynamic> createSpecialistsRecordData({
   String? insuredBy,
   String? appointment,
   String? website,
+  int? phoneNumber,
+  String? clinic,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -187,7 +194,6 @@ Map<String, dynamic> createSpecialistsRecordData({
       'postal_code': postalCode,
       'location_url': locationUrl,
       'location_LanLng': locationLanLng,
-      'number': number,
       'email': email,
       'open_hours': openHours,
       'netLike': netLike,
@@ -197,6 +203,8 @@ Map<String, dynamic> createSpecialistsRecordData({
       'insured_by': insuredBy,
       'appointment': appointment,
       'website': website,
+      'phone_number': phoneNumber,
+      'clinic': clinic,
     }.withoutNulls,
   );
 
@@ -216,7 +224,6 @@ class SpecialistsRecordDocumentEquality implements Equality<SpecialistsRecord> {
         e1?.postalCode == e2?.postalCode &&
         e1?.locationUrl == e2?.locationUrl &&
         e1?.locationLanLng == e2?.locationLanLng &&
-        e1?.number == e2?.number &&
         e1?.email == e2?.email &&
         e1?.openHours == e2?.openHours &&
         listEquality.equals(e1?.likedBy, e2?.likedBy) &&
@@ -226,7 +233,9 @@ class SpecialistsRecordDocumentEquality implements Equality<SpecialistsRecord> {
         e1?.photo == e2?.photo &&
         e1?.insuredBy == e2?.insuredBy &&
         e1?.appointment == e2?.appointment &&
-        e1?.website == e2?.website;
+        e1?.website == e2?.website &&
+        e1?.phoneNumber == e2?.phoneNumber &&
+        e1?.clinic == e2?.clinic;
   }
 
   @override
@@ -238,7 +247,6 @@ class SpecialistsRecordDocumentEquality implements Equality<SpecialistsRecord> {
         e?.postalCode,
         e?.locationUrl,
         e?.locationLanLng,
-        e?.number,
         e?.email,
         e?.openHours,
         e?.likedBy,
@@ -248,7 +256,9 @@ class SpecialistsRecordDocumentEquality implements Equality<SpecialistsRecord> {
         e?.photo,
         e?.insuredBy,
         e?.appointment,
-        e?.website
+        e?.website,
+        e?.phoneNumber,
+        e?.clinic
       ]);
 
   @override

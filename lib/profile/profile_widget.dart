@@ -109,7 +109,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                   child: Image.network(
                                     valueOrDefault<String>(
                                       currentUserPhoto,
-                                      'https://firebasestorage.googleapis.com/v0/b/trial-gs.appspot.com/o/users%2FIMG_20230830_121639.jpg?alt=media&token=a16265b9-bb32-4c36-a24b-3df2d5b350e5',
+                                      'https://firebasestorage.googleapis.com/v0/b/navimate-4468c.appspot.com/o/default-avatar-profile-icon-social-600nw-1677509740.webp?alt=media&token=0e7eb9e5-d6f1-4a38-b9dc-42309b34edaa',
                                     ),
                                     width: 100.0,
                                     height: 100.0,
@@ -245,7 +245,8 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                 alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Text(
-                                    currentPhoneNumber,
+                                    valueOrDefault(
+                                        currentUserDocument?.university, ''),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -315,7 +316,8 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                       alignment:
                                           const AlignmentDirectional(-1.0, 0.0),
                                       child: Text(
-                                        currentUserDisplayName,
+                                        valueOrDefault(
+                                            currentUserDocument?.country, ''),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -345,7 +347,8 @@ class _ProfileWidgetState extends State<ProfileWidget>
               ),
               Builder(
                 builder: (context) {
-                  if (currentPhoneNumber != '') {
+                  if (valueOrDefault(currentUserDocument?.birthDate, '') !=
+                          '') {
                     return Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 15.0),
@@ -393,7 +396,8 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                       alignment:
                                           const AlignmentDirectional(-1.0, 0.0),
                                       child: Text(
-                                        currentPhoneNumber,
+                                        valueOrDefault(
+                                            currentUserDocument?.birthDate, ''),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(

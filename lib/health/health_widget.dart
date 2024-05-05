@@ -125,7 +125,7 @@ class _HealthWidgetState extends State<HealthWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('GenpractiCopyCopy');
+                        context.pushNamed('GenpractiMainPage');
                       },
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),

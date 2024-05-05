@@ -33,6 +33,10 @@
       "queryScope": "COLLECTION",
       "fields": [
         {
+          "fieldPath": "Speciality",
+          "order": "ASCENDING"
+        },
+        {
           "fieldPath": "Filter",
           "arrayConfig": "CONTAINS"
         },

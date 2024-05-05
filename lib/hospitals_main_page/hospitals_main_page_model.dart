@@ -13,7 +13,7 @@ class HospitalsMainPageModel extends FlutterFlowModel<HospitalsMainPageWidget> {
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
-  List<GeneralPractitionersRecord> simpleSearchResults = [];
+  List<HospitalsRecord> simpleSearchResults = [];
   // State field(s) for Expandable widget.
   late ExpandableController expandableExpandableController;
 
