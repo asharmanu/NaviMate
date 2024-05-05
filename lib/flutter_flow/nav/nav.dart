@@ -1,20 +1,17 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
+import '/backend/push_notifications/push_notifications_handler.dart'
+    show PushNotificationsHandler;
 import '/index.dart';
 import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -79,104 +76,104 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : LoginWidget(),
+          appStateNotifier.loggedIn ? const NavBarPage() : const LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : LoginWidget(),
+              appStateNotifier.loggedIn ? const NavBarPage() : const LoginWidget(),
         ),
         FFRoute(
           name: 'HomePage',
           path: '/homePage',
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'HomePage')
-              : HomePageWidget(),
+              ? const NavBarPage(initialPage: 'HomePage')
+              : const HomePageWidget(),
         ),
         FFRoute(
           name: 'profile',
           path: '/profile',
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'profile')
-              : ProfileWidget(),
+              ? const NavBarPage(initialPage: 'profile')
+              : const ProfileWidget(),
         ),
         FFRoute(
           name: 'Notification',
           path: '/notification',
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'Notification')
-              : NotificationWidget(),
+              ? const NavBarPage(initialPage: 'Notification')
+              : const NotificationWidget(),
         ),
         FFRoute(
           name: 'Health',
           path: '/health',
-          builder: (context, params) => HealthWidget(),
+          builder: (context, params) => const HealthWidget(),
         ),
         FFRoute(
           name: 'Emergency',
           path: '/emergency',
-          builder: (context, params) => EmergencyWidget(),
+          builder: (context, params) => const EmergencyWidget(),
         ),
         FFRoute(
           name: 'Genpracti',
           path: '/genpracti',
-          builder: (context, params) => GenpractiWidget(),
+          builder: (context, params) => const GenpractiWidget(),
         ),
         FFRoute(
           name: 'Login',
           path: '/login',
-          builder: (context, params) => LoginWidget(),
+          builder: (context, params) => const LoginWidget(),
         ),
         FFRoute(
           name: 'createacc',
           path: '/createacc',
-          builder: (context, params) => CreateaccWidget(),
+          builder: (context, params) => const CreateaccWidget(),
         ),
         FFRoute(
           name: 'Insurance',
           path: '/insurance',
-          builder: (context, params) => InsuranceWidget(),
+          builder: (context, params) => const InsuranceWidget(),
         ),
         FFRoute(
           name: 'TKinsur',
           path: '/tKinsur',
-          builder: (context, params) => TKinsurWidget(),
+          builder: (context, params) => const TKinsurWidget(),
         ),
         FFRoute(
           name: 'AOKInsur',
           path: '/aOKInsur',
-          builder: (context, params) => AOKInsurWidget(),
+          builder: (context, params) => const AOKInsurWidget(),
         ),
         FFRoute(
           name: 'Specialist',
           path: '/specialist',
-          builder: (context, params) => SpecialistWidget(),
+          builder: (context, params) => const SpecialistWidget(),
         ),
         FFRoute(
           name: 'Hospitals',
           path: '/hospitals',
-          builder: (context, params) => HospitalsWidget(),
+          builder: (context, params) => const HospitalsWidget(),
         ),
         FFRoute(
           name: 'ForgotPassword',
           path: '/forgotPassword',
-          builder: (context, params) => ForgotPasswordWidget(),
+          builder: (context, params) => const ForgotPasswordWidget(),
         ),
         FFRoute(
           name: 'EditProfile',
           path: '/editProfile',
-          builder: (context, params) => EditProfileWidget(),
+          builder: (context, params) => const EditProfileWidget(),
         ),
         FFRoute(
           name: 'VerifyEmail',
           path: '/verifyEmail',
-          builder: (context, params) => VerifyEmailWidget(),
+          builder: (context, params) => const VerifyEmailWidget(),
         ),
         FFRoute(
           name: 'AboutUs',
           path: '/aboutUs',
-          builder: (context, params) => AboutUsWidget(),
+          builder: (context, params) => const AboutUsWidget(),
         ),
         FFRoute(
           name: 'GenPracDescription',
@@ -199,9 +196,118 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'GenpractiCopy',
-          path: '/genpractiCopy',
-          builder: (context, params) => GenpractiCopyWidget(),
+          name: 'GenpractiCopyCopy',
+          path: '/genpractiCopyCopy',
+          builder: (context, params) => const GenpractiCopyCopyWidget(),
+        ),
+        FFRoute(
+          name: 'TermsConditions',
+          path: '/termsConditions',
+          builder: (context, params) => const TermsConditionsWidget(),
+        ),
+        FFRoute(
+          name: 'MapsTrial',
+          path: '/mapsTrial',
+          builder: (context, params) => const MapsTrialWidget(),
+        ),
+        FFRoute(
+          name: 'writeReview',
+          path: '/writeReview',
+          builder: (context, params) => WriteReviewWidget(
+            reff: params.getParam(
+              'reff',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['GeneralPractitioners'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'SpecialistsPage',
+          path: '/specialistsPage',
+          builder: (context, params) => const SpecialistsPageWidget(),
+        ),
+        FFRoute(
+          name: 'SpecialistsPageListNOTWORKNG',
+          path: '/specialistsPageListNOTWORKNG',
+          builder: (context, params) => SpecialistsPageListNOTWORKNGWidget(
+            speciality: params.getParam(
+              'speciality',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'GenPracDescriptionNotUsing',
+          path: '/genPracDescriptionNotUsing',
+          asyncParams: {
+            'commentparameter': getDoc(['GeneralPractitioners'],
+                GeneralPractitionersRecord.fromSnapshot),
+          },
+          builder: (context, params) => GenPracDescriptionNotUsingWidget(
+            ref: params.getParam(
+              'ref',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['GeneralPractitioners'],
+            ),
+            commentparameter: params.getParam(
+              'commentparameter',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'makeReminder',
+          path: '/makeReminder',
+          builder: (context, params) => const MakeReminderWidget(),
+        ),
+        FFRoute(
+          name: 'specialistSearchFinal',
+          path: '/specialistSearchFinal',
+          builder: (context, params) => SpecialistSearchFinalWidget(
+            speciality: params.getParam(
+              'speciality',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'specialistsDescription',
+          path: '/specialistsDescription',
+          asyncParams: {
+            'commentparameter':
+                getDoc(['Specialists'], SpecialistsRecord.fromSnapshot),
+          },
+          builder: (context, params) => SpecialistsDescriptionWidget(
+            refSpec: params.getParam(
+              'refSpec',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['Specialists'],
+            ),
+            commentparameter: params.getParam(
+              'commentparameter',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'HospitalsMainPage',
+          path: '/hospitalsMainPage',
+          builder: (context, params) => const HospitalsMainPageWidget(),
+        ),
+        FFRoute(
+          name: 'HospitalsDescription',
+          path: '/hospitalsDescription',
+          builder: (context, params) => HospitalsDescriptionWidget(
+            refDoc: params.getParam(
+              'refDoc',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['hospitals'],
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -397,7 +503,7 @@ class FFRoute {
                     ),
                   ),
                 )
-              : page;
+              : PushNotificationsHandler(child: page);
 
           final transitionInfo = state.transitionInfo;
           return transitionInfo.hasTransition
@@ -439,7 +545,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

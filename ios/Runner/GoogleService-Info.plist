@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyBe1yNOBocMYV0ZJ2SCWeLrUtcQcGy-d8o</string>
+	<string>AIzaSyBJkN0BX9pnPYTMhtrBWrJ7v5UiOjAuK-M</string>
 	<key>GCM_SENDER_ID</key>
-	<string>834455485925</string>
+	<string>541167906916</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.mycompany.justtriallll</string>
+	<string>com.mycompany.navimate</string>
 	<key>PROJECT_ID</key>
-	<string>navimate-4468c</string>
+	<string>navimate-database</string>
 	<key>STORAGE_BUCKET</key>
-	<string>navimate-4468c.appspot.com</string>
+	<string>navimate-database.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:834455485925:ios:b787cf5350475d5cba430c</string>
+	<string>1:541167906916:ios:018e5798dde9e4e9a7ef71</string>
 </dict>
 </plist>

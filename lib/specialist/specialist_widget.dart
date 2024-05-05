@@ -1,11 +1,8 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'specialist_model.dart';
 export 'specialist_model.dart';
 
@@ -67,7 +64,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -80,7 +77,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
               children: [
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 16.0),
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 16.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       'dlas4smu' /* Near Campus */,
@@ -92,13 +89,13 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
                         child: Material(
                           color: Colors.transparent,
                           elevation: 2.0,
@@ -109,7 +106,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                   .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 12.0, 12.0, 12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -128,7 +125,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           2.0, 2.0, 2.0, 2.0),
                                       child: ClipRRect(
                                         borderRadius:
@@ -144,7 +141,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -209,7 +206,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                     ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: InkWell(
                                                   splashColor:
@@ -258,7 +255,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                 size: 20.0,
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         3.0, 12.0, 0.0, 4.0),
                                                 child: InkWell(
@@ -307,7 +304,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
                         child: Material(
                           color: Colors.transparent,
                           elevation: 2.0,
@@ -318,7 +315,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                   .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 12.0, 12.0, 12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -337,7 +334,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           2.0, 2.0, 2.0, 2.0),
                                       child: ClipRRect(
                                         borderRadius:
@@ -353,7 +350,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -432,7 +429,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                 size: 20.0,
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         3.0, 12.0, 0.0, 4.0),
                                                 child: InkWell(
@@ -481,7 +478,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
                         child: Material(
                           color: Colors.transparent,
                           elevation: 2.0,
@@ -492,7 +489,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                   .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 12.0, 12.0, 12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -511,7 +508,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           2.0, 2.0, 2.0, 2.0),
                                       child: ClipRRect(
                                         borderRadius:
@@ -527,7 +524,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -592,7 +589,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                     ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: InkWell(
                                                   splashColor:
@@ -641,7 +638,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                 size: 20.0,
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         3.0, 12.0, 0.0, 4.0),
                                                 child: InkWell(
@@ -690,7 +687,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
                         child: Material(
                           color: Colors.transparent,
                           elevation: 2.0,
@@ -701,7 +698,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                   .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 12.0, 12.0, 12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -720,7 +717,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           2.0, 2.0, 2.0, 2.0),
                                       child: ClipRRect(
                                         borderRadius:
@@ -736,7 +733,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -801,7 +798,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                     ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: InkWell(
                                                   splashColor:
@@ -850,7 +847,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                 size: 20.0,
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         3.0, 12.0, 0.0, 4.0),
                                                 child: InkWell(
@@ -899,7 +896,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
                         child: Material(
                           color: Colors.transparent,
                           elevation: 2.0,
@@ -910,7 +907,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                   .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 12.0, 12.0, 12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -929,7 +926,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           2.0, 2.0, 2.0, 2.0),
                                       child: ClipRRect(
                                         borderRadius:
@@ -945,7 +942,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -1010,7 +1007,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                     ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: InkWell(
                                                   splashColor:
@@ -1059,7 +1056,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                 size: 20.0,
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         3.0, 12.0, 0.0, 4.0),
                                                 child: InkWell(
@@ -1108,7 +1105,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
                         child: Material(
                           color: Colors.transparent,
                           elevation: 2.0,
@@ -1119,7 +1116,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                   .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 12.0, 12.0, 12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1138,7 +1135,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           2.0, 2.0, 2.0, 2.0),
                                       child: ClipRRect(
                                         borderRadius:
@@ -1154,7 +1151,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -1219,7 +1216,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                     ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: InkWell(
                                                   splashColor:
@@ -1268,7 +1265,7 @@ class _SpecialistWidgetState extends State<SpecialistWidget> {
                                                 size: 20.0,
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         3.0, 12.0, 0.0, 4.0),
                                                 child: InkWell(

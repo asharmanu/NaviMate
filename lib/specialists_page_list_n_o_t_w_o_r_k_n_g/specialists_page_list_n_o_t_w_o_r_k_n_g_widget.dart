@@ -4,32 +4,37 @@ import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
-import 'genpracti_copy_model.dart';
-export 'genpracti_copy_model.dart';
+import 'specialists_page_list_n_o_t_w_o_r_k_n_g_model.dart';
+export 'specialists_page_list_n_o_t_w_o_r_k_n_g_model.dart';
 
-class GenpractiCopyWidget extends StatefulWidget {
-  const GenpractiCopyWidget({super.key});
+class SpecialistsPageListNOTWORKNGWidget extends StatefulWidget {
+  const SpecialistsPageListNOTWORKNGWidget({
+    super.key,
+    required this.speciality,
+  });
+
+  final String? speciality;
 
   @override
-  State<GenpractiCopyWidget> createState() => _GenpractiCopyWidgetState();
+  State<SpecialistsPageListNOTWORKNGWidget> createState() =>
+      _SpecialistsPageListNOTWORKNGWidgetState();
 }
 
-class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
-  late GenpractiCopyModel _model;
+class _SpecialistsPageListNOTWORKNGWidgetState
+    extends State<SpecialistsPageListNOTWORKNGWidget> {
+  late SpecialistsPageListNOTWORKNGModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => GenpractiCopyModel());
+    _model = createModel(context, () => SpecialistsPageListNOTWORKNGModel());
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
@@ -69,15 +74,16 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
             },
           ),
           title: Text(
-            FFLocalizations.of(context).getText(
-              'r2bo88rr' /* General Practitioners */,
+            valueOrDefault<String>(
+              widget.speciality,
+              'Specialist',
             ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Outfit',
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -97,14 +103,14 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController,
                               focusNode: _model.textFieldFocusNode,
                               onFieldSubmitted: (_) async {
                                 while (true) {
-                                  await queryGeneralPractitionersRecordOnce()
+                                  await querySpecialistsRecordOnce()
                                       .then(
                                         (records) => _model
                                             .simpleSearchResults = TextSearch(
@@ -113,7 +119,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                                 (record) =>
                                                     TextSearchItem.fromTerms(
                                                         record,
-                                                        [record.nameSurname!]),
+                                                        [record.nameSurname]),
                                               )
                                               .toList(),
                                         )
@@ -126,7 +132,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                       .whenComplete(() => setState(() {}));
 
                                   setState(() {
-                                    FFAppState().showFullList = false;
+                                    FFAppState().showFullList2 = false;
                                   });
                                 }
                               },
@@ -134,7 +140,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
-                                  'wcshicrn' /* Search all articles... */,
+                                  '89myqfew' /* Search all articles... */,
                                 ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
@@ -177,7 +183,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                   ),
                                   borderRadius: BorderRadius.circular(12.0),
                                 ),
-                                contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 0.0, 0.0),
                                 suffixIcon: Icon(
                                   Icons.search_rounded,
@@ -205,27 +211,27 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   2.0, 8.0, 0.0, 8.0),
                               child: FlutterFlowChoiceChips(
                                 options: [
                                   ChipData(FFLocalizations.of(context).getText(
-                                    '3ld38tay' /* Open Now */,
+                                    'wk2y9j63' /* Open Now */,
                                   )),
                                   ChipData(FFLocalizations.of(context).getText(
-                                    'zmkg2emi' /* English */,
+                                    '5ojte7t4' /* English */,
                                   )),
                                   ChipData(FFLocalizations.of(context).getText(
-                                    'iss34423' /* TK */,
+                                    'tf6190h3' /* TK */,
                                   )),
                                   ChipData(FFLocalizations.of(context).getText(
-                                    'yrjjvvo2' /* AOK */,
+                                    '84z8b9xh' /* AOK */,
                                   ))
                                 ],
                                 onChanged: (val) => setState(
@@ -288,28 +294,28 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
                       child: FlutterFlowDropDown<String>(
                         controller: _model.sortByValueController ??=
                             FormFieldController<String>(null),
                         options: [
                           FFLocalizations.of(context).getText(
-                            'te31fnq9' /* Location - Near to Far */,
+                            'h6s5m9iq' /* Location - Near to Far */,
                           ),
                           FFLocalizations.of(context).getText(
-                            'mr8xzv3g' /* Location  - Far to Near */,
+                            'w8cg1k67' /* Location  - Far to Near */,
                           ),
                           FFLocalizations.of(context).getText(
-                            'f13sjzug' /* Review - 1 to 5 */,
+                            '5lykc6rz' /* Review - 1 to 5 */,
                           ),
                           FFLocalizations.of(context).getText(
-                            'riol0vtm' /* Review - 5 to 1 */,
+                            'wa742buo' /* Review - 5 to 1 */,
                           ),
                           FFLocalizations.of(context).getText(
-                            'a9hzmfhp' /* Work experience - most to leas... */,
+                            'apukhzwj' /* Work experience - most to leas... */,
                           ),
                           FFLocalizations.of(context).getText(
-                            'ffqjvrjs' /* Work experience - least to mos... */,
+                            'pn93jysy' /* Work experience - least to mos... */,
                           )
                         ],
                         onChanged: (val) =>
@@ -324,7 +330,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                               letterSpacing: 0.0,
                             ),
                         hintText: FFLocalizations.of(context).getText(
-                          'wk7wgpxz' /* Sort by */,
+                          'vq1f1py3' /* Sort by */,
                         ),
                         icon: Icon(
                           Icons.keyboard_arrow_down_rounded,
@@ -337,7 +343,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                         borderColor: FlutterFlowTheme.of(context).alternate,
                         borderWidth: 2.0,
                         borderRadius: 12.0,
-                        margin: EdgeInsetsDirectional.fromSTEB(
+                        margin: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 4.0, 16.0, 4.0),
                         hidesUnderline: true,
                         isOverButton: true,
@@ -349,17 +355,20 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                       thickness: 1.0,
                       color: FlutterFlowTheme.of(context).alternate,
                     ),
-                    if (FFAppState().showFullList)
+                    if (FFAppState().showFullList2)
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 8.0, 16.0, 8.0),
-                        child: StreamBuilder<List<GeneralPractitionersRecord>>(
-                          stream: queryGeneralPractitionersRecord(
-                            queryBuilder: (generalPractitionersRecord) =>
-                                generalPractitionersRecord.where(
-                              'name_surname',
-                              isGreaterThan: _model.sortByValue,
-                            ),
+                        child: StreamBuilder<List<SpecialistsRecord>>(
+                          stream: querySpecialistsRecord(
+                            queryBuilder: (specialistsRecord) =>
+                                specialistsRecord
+                                    .where(
+                                      'Speciality',
+                                      isEqualTo: widget.speciality,
+                                    )
+                                    .whereArrayContainsAny(
+                                        'Filter', _model.choiceChipsValues),
                           ),
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.
@@ -376,19 +385,17 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                 ),
                               );
                             }
-                            List<GeneralPractitionersRecord>
-                                columnGeneralPractitionersRecordList =
-                                snapshot.data!;
+                            List<SpecialistsRecord>
+                                columnSpecialistsRecordList = snapshot.data!;
                             return Column(
                               mainAxisSize: MainAxisSize.max,
                               children: List.generate(
-                                  columnGeneralPractitionersRecordList.length,
+                                  columnSpecialistsRecordList.length,
                                   (columnIndex) {
-                                final columnGeneralPractitionersRecord =
-                                    columnGeneralPractitionersRecordList[
-                                        columnIndex];
+                                final columnSpecialistsRecord =
+                                    columnSpecialistsRecordList[columnIndex];
                                 return Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 8.0, 8.0, 8.0),
                                   child: Material(
                                     color: Colors.transparent,
@@ -400,7 +407,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                             .secondaryBackground,
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 12.0, 12.0, 12.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -421,7 +428,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         2.0, 2.0, 2.0, 2.0),
                                                 child: ClipRRect(
@@ -439,7 +446,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                             ),
                                             Expanded(
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 0.0, 12.0),
                                                 child: InkWell(
@@ -451,19 +458,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                                       Colors.transparent,
                                                   highlightColor:
                                                       Colors.transparent,
-                                                  onTap: () async {
-                                                    context.pushNamed(
-                                                      'GenPracDescription',
-                                                      queryParameters: {
-                                                        'ref': serializeParam(
-                                                          columnGeneralPractitionersRecord
-                                                              .reference,
-                                                          ParamType
-                                                              .DocumentReference,
-                                                        ),
-                                                      }.withoutNulls,
-                                                    );
-                                                  },
+                                                  onTap: () async {},
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -472,7 +467,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                                             .start,
                                                     children: [
                                                       Text(
-                                                        columnGeneralPractitionersRecord
+                                                        columnSpecialistsRecord
                                                             .nameSurname,
                                                         style:
                                                             FlutterFlowTheme.of(
@@ -486,8 +481,11 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                                                 ),
                                                       ),
                                                       Text(
-                                                        columnGeneralPractitionersRecord
-                                                            .address,
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '6btq4gax' /* Pumpenstrasse 10 */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -510,7 +508,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'vlwutco8' /* 28759 Bremen */,
+                                                              '2w9r7i46' /* 28759 Bremen */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -527,7 +525,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                                           ),
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: InkWell(
                                                               splashColor: Colors
@@ -539,16 +537,13 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                                               highlightColor:
                                                                   Colors
                                                                       .transparent,
-                                                              onTap: () async {
-                                                                await launchURL(
-                                                                    columnGeneralPractitionersRecord
-                                                                        .address);
-                                                              },
+                                                              onTap:
+                                                                  () async {},
                                                               child: Text(
                                                                 FFLocalizations.of(
                                                                         context)
                                                                     .getText(
-                                                                  'nb7aphr3' /* map */,
+                                                                  'fyghcx9i' /* map */,
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -584,7 +579,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         3.0,
                                                                         12.0,
@@ -605,15 +600,8 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                                                     'tel:+49421627171');
                                                               },
                                                               child: Text(
-                                                                formatNumber(
-                                                                  columnGeneralPractitionersRecord
-                                                                      .phoneNumber,
-                                                                  formatType:
-                                                                      FormatType
-                                                                          .custom,
-                                                                  format: '+',
-                                                                  locale: '',
-                                                                ),
+                                                                columnSpecialistsRecord
+                                                                    .number,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodySmall
@@ -649,7 +637,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                       ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
                       child: Builder(
                         builder: (context) {
                           final children = _model.simpleSearchResults.toList();
@@ -659,7 +647,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                 List.generate(children.length, (childrenIndex) {
                               final childrenItem = children[childrenIndex];
                               return Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 8.0, 8.0, 8.0),
                                 child: Material(
                                   color: Colors.transparent,
@@ -671,7 +659,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                           .secondaryBackground,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 12.0, 12.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -692,7 +680,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(2.0, 2.0, 2.0, 2.0),
                                               child: ClipRRect(
                                                 borderRadius:
@@ -708,7 +696,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                           ),
                                           Expanded(
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 0.0, 12.0),
                                               child: InkWell(
@@ -717,18 +705,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                                 hoverColor: Colors.transparent,
                                                 highlightColor:
                                                     Colors.transparent,
-                                                onTap: () async {
-                                                  context.pushNamed(
-                                                    'GenPracDescription',
-                                                    queryParameters: {
-                                                      'ref': serializeParam(
-                                                        childrenItem.reference,
-                                                        ParamType
-                                                            .DocumentReference,
-                                                      ),
-                                                    }.withoutNulls,
-                                                  );
-                                                },
+                                                onTap: () async {},
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -747,7 +724,11 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                                           ),
                                                     ),
                                                     Text(
-                                                      childrenItem.address,
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '8uqxkfpn' /* Pumpenstrasse 10 */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .labelMedium
@@ -768,7 +749,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                            'cu15nby9' /* 28759 Bremen */,
+                                                            '44qrhf7j' /* 28759 Bremen */,
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -785,7 +766,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                                         ),
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: InkWell(
                                                             splashColor: Colors
@@ -797,16 +778,12 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                                             highlightColor:
                                                                 Colors
                                                                     .transparent,
-                                                            onTap: () async {
-                                                              await launchURL(
-                                                                  childrenItem
-                                                                      .address);
-                                                            },
+                                                            onTap: () async {},
                                                             child: Text(
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'w3yzppt1' /* map */,
+                                                                '9ac9napi' /* map */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -842,7 +819,7 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       3.0,
                                                                       12.0,
@@ -863,15 +840,8 @@ class _GenpractiCopyWidgetState extends State<GenpractiCopyWidget> {
                                                                   'tel:+49421627171');
                                                             },
                                                             child: Text(
-                                                              formatNumber(
-                                                                childrenItem
-                                                                    .phoneNumber,
-                                                                formatType:
-                                                                    FormatType
-                                                                        .custom,
-                                                                format: '+',
-                                                                locale: '',
-                                                              ),
+                                                              childrenItem
+                                                                  .number,
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodySmall

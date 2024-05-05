@@ -193,16 +193,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Notification
   {
-    '4igh9kdq': {
-      'en': 'Profile successfully made!',
+    'fr6uqjzf': {
+      'en': 'map',
       'de': '',
     },
-    'zh2nmpx7': {
-      'en': 'Welcome to NaviMate! Let\'s start your academic transition!',
+    'm6bazpz2': {
+      'en': 'No more reminders!',
       'de': '',
     },
     '60rsphme': {
-      'en': 'Notifications',
+      'en': 'Reminders',
       'de': '',
     },
     '32ztdycv': {
@@ -369,7 +369,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Sign In',
       'de': '',
     },
-    'zxvv5qoc': {
+    'kdoubwt2': {
       'en': 'Forgot Password',
       'de': '',
     },
@@ -377,7 +377,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Sign up',
       'de': '',
     },
-    'uwsmgmyn': {
+    'zxvv5qoc': {
       'en': 'Emergency',
       'de': '',
     },
@@ -684,10 +684,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Hospitals
   {
-    'j79z7hgk': {
-      'en': 'Nearby Hospitals',
-      'de': '',
-    },
     'dg1u0gsv': {
       'en': 'Hospitals',
       'de': '',
@@ -816,20 +812,32 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // GenPracDescription
   {
-    '217lie5l': {
-      'en': 'Discription',
+    '91x8t8rm': {
+      'en': 'Insurance:',
       'de': '',
     },
-    '1d4nx409': {
-      'en': '3',
+    'j1wb7p0d': {
+      'en': 'Language:',
       'de': '',
     },
-    'ybqqn9a7': {
-      'en': 'likes',
+    '6bej16nb': {
+      'en': 'Appointments by:',
       'de': '',
     },
-    'rk76b7vw': {
-      'en': '8',
+    'j9rk4yit': {
+      'en': 'Billing type:',
+      'de': '',
+    },
+    'hty7feaz': {
+      'en': 'Opening hours:',
+      'de': '',
+    },
+    'k2fd0owt': {
+      'en': 'Email:',
+      'de': '',
+    },
+    'a0s7tel7': {
+      'en': 'More information',
       'de': '',
     },
     'ucv2mbcd': {
@@ -849,78 +857,462 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
     },
   },
-  // GenpractiCopy
+  // GenpractiCopyCopy
   {
-    'wcshicrn': {
+    'o0b2q1ud': {
       'en': 'Search all articles...',
       'de': '',
     },
-    '3ld38tay': {
+    'vtdslxv5': {
+      'en': 'Filters and Sorting',
+      'de': '',
+    },
+    '29xm1ilp': {
       'en': 'Open Now',
       'de': '',
     },
-    'zmkg2emi': {
+    'l3ukgxnx': {
       'en': 'English',
       'de': '',
     },
-    'iss34423': {
+    '7g15fuh7': {
       'en': 'TK',
       'de': '',
     },
-    'yrjjvvo2': {
+    'ez5qcjck': {
       'en': 'AOK',
       'de': '',
     },
-    'te31fnq9': {
-      'en': 'Location - Near to Far',
+    '2wevyjqo': {
+      'en': 'Location - Near',
       'de': '',
     },
-    'mr8xzv3g': {
-      'en': 'Location  - Far to Near',
+    'ynzvb01q': {
+      'en': 'Reviews - Most like',
       'de': '',
     },
-    'f13sjzug': {
-      'en': 'Review - 1 to 5',
+    'wb57pvh3': {
+      'en': 'Work experience - Most',
       'de': '',
     },
-    'riol0vtm': {
-      'en': 'Review - 5 to 1',
-      'de': '',
-    },
-    'a9hzmfhp': {
-      'en': 'Work experience - most to least',
-      'de': '',
-    },
-    'ffqjvrjs': {
-      'en': 'Work experience - least to most',
-      'de': '',
-    },
-    'wk7wgpxz': {
+    '3he7g4k4': {
       'en': 'Sort by',
       'de': '',
     },
-    '4dccg595': {
+    'ejnm1kk3': {
       'en': 'Search for an item...',
       'de': '',
     },
-    'vlwutco8': {
-      'en': '28759 Bremen',
-      'de': '',
-    },
-    'nb7aphr3': {
+    'de2xaz5h': {
       'en': 'map',
       'de': '',
     },
-    'cu15nby9': {
-      'en': '28759 Bremen',
-      'de': '',
-    },
-    'w3yzppt1': {
+    '87r37ckj': {
       'en': 'map',
       'de': '',
     },
-    'r2bo88rr': {
+    'r9dz60ok': {
+      'en': 'map',
+      'de': '',
+    },
+    'tg8bkxvw': {
       'en': 'General Practitioners',
+      'de': '',
+    },
+  },
+  // TermsConditions
+  {
+    'ex7e427r': {
+      'en':
+          'Navimate Terms & Conditions\n1. Introduction\nWelcome to Navimate! These Terms & Conditions (\"T&Cs\") govern your access and use of the Navimate mobile application (\"App\"). By downloading, installing, or using the App, you agree to be bound by these T&Cs.\n2. User Accounts\n2.1 To fully enjoy the benefits of Navimate, you can create a user account. 2.2 Account creation requires you to be of legal age in Germany.\n 2.3 Your Navimate account will not be linked to any social media accounts.\n3. User Data & Privacy\n3.1 We collect the following personal information from you during account creation: name, surname, and email address. We may also collect your university affiliation optionally. 3.2 We do not use your personal information for marketing purposes (e.g., sending emails or newsletters). 3.3 We do not use any third-party digital analytics software to track your activity within the App. 3.4 We do not display advertisements within the App. 3.5 We take the privacy of your information seriously and will use it only for the purpose of providing and improving the Navimate service. 3.6 We comply with all applicable German data protection regulations, including the General Data Protection Regulation (GDPR).\n4. User Content & Intellectual Property\n3.1 You retain all ownership rights to the content you upload or post on the App (comments, photos, reviews). 3.2 By uploading content, you grant Navimate a non-exclusive, royalty-free license to use, reproduce, modify, publish, and distribute your content within the App, solely for the purpose of providing and improving the service. 3.3 Navimate owns all intellectual property rights associated with the App itself.\n5. Acceptable Use\n4.1 You agree to use the App in a lawful, respectful, and non-intrusive manner. 4.2 Prohibited activities include, but are not limited to: * Uploading illegal content or content that violates the rights of others (e.g., copyright infringement). * Hate speech, harassment, bullying, or threats. * Spam or commercially oriented content not approved by Navimate. * Distributing viruses or malware. * Interfering with the functionality of the App.\n6. Disclaimers & Limitation of Liability\n5.1 Navimate strives to provide a reliable and functional App. However, we cannot guarantee uninterrupted or error-free service. 5.2 The App is provided \"as is\" and to the extent permitted by law, Navimate disclaims all warranties, express or implied, including warranties of merchantability, fitness for a particular purpose, and non-infringement. 5.3 Navimate shall not be liable for any damages arising from your use of the App, including but not limited to, direct, indirect, incidental, consequential, or punitive damages.\n7. Termination\nNavimate reserves the right to suspend or terminate your account at any time without notice for violating the T&Cs.\n8. Governing Law & Dispute Resolution\nThese T&Cs are governed by and construed in accordance with the laws of Germany. Any dispute arising out of or relating to the T&Cs will be resolved by the competent courts of Germany.\n9. Modifications to T&Cs\nNavimate reserves the right to modify these T&Cs at any time. We will notify you of any changes by posting the revised T&Cs within the App. Your continued use of the App after the revised T&Cs are posted constitutes your agreement to the changes.\n10. Additional Permissions\n10.1 The App utilizes: * Geolocation: To provide location-based features and functionalities within the App. * Photo Gallery Access: To allow you to upload photos from your device when adding content to the App. 10.2 We will only access your geolocation and photo gallery with your permission.\n11. Contact Us\nIf you have any questions about these T&Cs, your privacy, or data usage, please contact us at [insert email address].\n',
+      'de': '',
+    },
+    '28z3tkgy': {
+      'en': 'About us',
+      'de': '',
+    },
+    'wbw9k9zk': {
+      'en': 'Home',
+      'de': '',
+    },
+  },
+  // MapsTrial
+  {
+    '63giy7h3': {
+      'en': 'Map',
+      'de': '',
+    },
+    '6xdymcmr': {
+      'en': 'Home',
+      'de': '',
+    },
+  },
+  // writeReview
+  {
+    'fyfqq9c6': {
+      'en': 'Anonymous',
+      'de': '',
+    },
+    'anlhr3mu': {
+      'en': 'Your Review',
+      'de': '',
+    },
+    'sxx0upv7': {
+      'en': 'Write your review here...',
+      'de': '',
+    },
+    '8tsxv4u8': {
+      'en': 'Publish Review',
+      'de': '',
+    },
+    'i9x79ns8': {
+      'en': 'Write a Review',
+      'de': '',
+    },
+    'iu41naj2': {
+      'en': 'Home',
+      'de': '',
+    },
+  },
+  // SpecialistsPage
+  {
+    'wfm802k6': {
+      'en': 'General Practitioners',
+      'de': '',
+    },
+  },
+  // SpecialistsPageListNOTWORKNG
+  {
+    '89myqfew': {
+      'en': 'Search all articles...',
+      'de': '',
+    },
+    'wk2y9j63': {
+      'en': 'Open Now',
+      'de': '',
+    },
+    '5ojte7t4': {
+      'en': 'English',
+      'de': '',
+    },
+    'tf6190h3': {
+      'en': 'TK',
+      'de': '',
+    },
+    '84z8b9xh': {
+      'en': 'AOK',
+      'de': '',
+    },
+    'h6s5m9iq': {
+      'en': 'Location - Near to Far',
+      'de': '',
+    },
+    'w8cg1k67': {
+      'en': 'Location  - Far to Near',
+      'de': '',
+    },
+    '5lykc6rz': {
+      'en': 'Review - 1 to 5',
+      'de': '',
+    },
+    'wa742buo': {
+      'en': 'Review - 5 to 1',
+      'de': '',
+    },
+    'apukhzwj': {
+      'en': 'Work experience - most to least',
+      'de': '',
+    },
+    'pn93jysy': {
+      'en': 'Work experience - least to most',
+      'de': '',
+    },
+    'vq1f1py3': {
+      'en': 'Sort by',
+      'de': '',
+    },
+    'z233o5wo': {
+      'en': 'Search for an item...',
+      'de': '',
+    },
+    '6btq4gax': {
+      'en': 'Pumpenstrasse 10',
+      'de': '',
+    },
+    '2w9r7i46': {
+      'en': '28759 Bremen',
+      'de': '',
+    },
+    'fyghcx9i': {
+      'en': 'map',
+      'de': '',
+    },
+    '8uqxkfpn': {
+      'en': 'Pumpenstrasse 10',
+      'de': '',
+    },
+    '44qrhf7j': {
+      'en': '28759 Bremen',
+      'de': '',
+    },
+    '9ac9napi': {
+      'en': 'map',
+      'de': '',
+    },
+  },
+  // GenPracDescriptionNotUsing
+  {
+    'j8g7fk1a': {
+      'en': 'Discription',
+      'de': '',
+    },
+    'fpurbtk0': {
+      'en': '3',
+      'de': '',
+    },
+    '6axub2m7': {
+      'en': 'likes',
+      'de': '',
+    },
+    'no90zmjp': {
+      'en': '8',
+      'de': '',
+    },
+    'rn3dhtnv': {
+      'en': 'Reviews',
+      'de': '',
+    },
+    'y4q73qnq': {
+      'en': 'Reviews',
+      'de': '',
+    },
+    'iibzjmyi': {
+      'en': 'Write a Review',
+      'de': '',
+    },
+    'g0oz2s14': {
+      'en': 'Home',
+      'de': '',
+    },
+  },
+  // makeReminder
+  {
+    '6qe0zl3w': {
+      'en': 'Warning! Making a reminder does not mean booking an appointment!',
+      'de': '',
+    },
+    '0o5gkuts': {
+      'en': 'Appointment with',
+      'de': '',
+    },
+    'avcci6ja': {
+      'en': 'Search for an item...',
+      'de': '',
+    },
+    'j73nugnk': {
+      'en': 'Make Reminder',
+      'de': '',
+    },
+    'uoyo52rg': {
+      'en': 'Reminder',
+      'de': '',
+    },
+    'krmdrng9': {
+      'en': 'Home',
+      'de': '',
+    },
+  },
+  // specialistSearchFinal
+  {
+    '8dsc64zd': {
+      'en': 'Search all articles...',
+      'de': '',
+    },
+    'i3k3roam': {
+      'en': 'Filters and Sorting',
+      'de': '',
+    },
+    'wlat4ifi': {
+      'en': 'Open Now',
+      'de': '',
+    },
+    'v8v9fc91': {
+      'en': 'English',
+      'de': '',
+    },
+    'qywey64n': {
+      'en': 'TK',
+      'de': '',
+    },
+    '27bnl6d0': {
+      'en': 'AOK',
+      'de': '',
+    },
+    'n0hi16ll': {
+      'en': 'Location - Near',
+      'de': '',
+    },
+    'hrwwhwvm': {
+      'en': 'Reviews - Most like',
+      'de': '',
+    },
+    'zgkxciao': {
+      'en': 'Work experience - Most',
+      'de': '',
+    },
+    '4597w832': {
+      'en': 'Sort by',
+      'de': '',
+    },
+    'zirex9vk': {
+      'en': 'Search for an item...',
+      'de': '',
+    },
+    'ogmknxx2': {
+      'en': 'map',
+      'de': '',
+    },
+    'g0xriy15': {
+      'en': 'map',
+      'de': '',
+    },
+    'exaopnf6': {
+      'en': 'map',
+      'de': '',
+    },
+  },
+  // specialistsDescription
+  {
+    '2kms1vtg': {
+      'en': 'Insurance:',
+      'de': '',
+    },
+    'm4k5tyfc': {
+      'en': 'Language:',
+      'de': '',
+    },
+    'tycg82k5': {
+      'en':
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'de': '',
+    },
+    'ai7671yd': {
+      'en': 'Appointments by:',
+      'de': '',
+    },
+    '8w75qqvo': {
+      'en':
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'de': '',
+    },
+    'n5wp69ja': {
+      'en': 'Opening hours:',
+      'de': '',
+    },
+    'qq01s8qk': {
+      'en': 'Email:',
+      'de': '',
+    },
+    'twg2y1lr': {
+      'en': 'More information',
+      'de': '',
+    },
+    '0l6bulfc': {
+      'en': 'Home',
+      'de': '',
+    },
+  },
+  // HospitalsMainPage
+  {
+    'zcoz8cf4': {
+      'en': 'Search all articles...',
+      'de': '',
+    },
+    '4qx9dxng': {
+      'en': 'Filters and Sorting',
+      'de': '',
+    },
+    'jjlbpxxz': {
+      'en': 'Open Now',
+      'de': '',
+    },
+    'gzoir7r3': {
+      'en': 'English',
+      'de': '',
+    },
+    'lecmqjv4': {
+      'en': 'TK',
+      'de': '',
+    },
+    'afbpusjh': {
+      'en': 'AOK',
+      'de': '',
+    },
+    'itu5lgw3': {
+      'en': 'Location - Near',
+      'de': '',
+    },
+    '3o2f4nks': {
+      'en': 'Reviews - Most like',
+      'de': '',
+    },
+    'nfhcwaz0': {
+      'en': 'Work experience - Most',
+      'de': '',
+    },
+    '2ryf1t8h': {
+      'en': 'Sort by',
+      'de': '',
+    },
+    'llxwtlgm': {
+      'en': 'Search for an item...',
+      'de': '',
+    },
+    'yri2854o': {
+      'en': 'map',
+      'de': '',
+    },
+    '1ibe4a59': {
+      'en': 'map',
+      'de': '',
+    },
+    '8a1poz2r': {
+      'en': 'map',
+      'de': '',
+    },
+    'g34h3tgj': {
+      'en': 'Hospitals',
+      'de': '',
+    },
+  },
+  // HospitalsDescription
+  {
+    'p7n8r2ec': {
+      'en': 'Insurance:',
+      'de': '',
+    },
+    'z1kjjydk': {
+      'en': 'Language:',
+      'de': '',
+    },
+    'mrye86hy': {
+      'en': 'Appointments by:',
+      'de': '',
+    },
+    '8x92jdhw': {
+      'en': 'Opening hours:',
+      'de': '',
+    },
+    '5dfxd9w7': {
+      'en': 'Email:',
+      'de': '',
+    },
+    '8kg2ica5': {
+      'en': 'More information',
+      'de': '',
+    },
+    '2ss7217x': {
+      'en': 'Home',
       'de': '',
     },
   },
@@ -932,6 +1324,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'fb4px5ss': {
       'en': '',
+      'de': '',
+    },
+    'ktb1bviy': {
+      'en':
+          'In order to find location, this app requires permission to access the location.',
       'de': '',
     },
     'ok2at06t': {

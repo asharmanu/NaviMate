@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'about_us_model.dart';
 export 'about_us_model.dart';
 
@@ -50,7 +47,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -70,7 +67,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -82,13 +79,13 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
             children: [
               Expanded(
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, -1.0),
+                  alignment: const AlignmentDirectional(0.0, -1.0),
                   child: Container(
                     width: double.infinity,
-                    constraints: BoxConstraints(
+                    constraints: const BoxConstraints(
                       maxWidth: 970.0,
                     ),
-                    decoration: BoxDecoration(),
+                    decoration: const BoxDecoration(),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,10 +98,10 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                           Container(
                             width: double.infinity,
                             height: 24.0,
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                           ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 16.0, 0.0, 4.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -119,7 +116,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -134,7 +131,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                           ),
                         ),
                         ListView(
-                          padding: EdgeInsets.fromLTRB(
+                          padding: const EdgeInsets.fromLTRB(
                             0,
                             0,
                             0,
@@ -153,7 +150,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                     blurRadius: 0.0,
                                     color:
                                         FlutterFlowTheme.of(context).alternate,
-                                    offset: Offset(
+                                    offset: const Offset(
                                       0.0,
                                       1.0,
                                     ),
@@ -161,7 +158,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                 ],
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 12.0, 16.0, 12.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -172,7 +169,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .accent1,
-                                        borderRadius: BorderRadius.only(
+                                        borderRadius: const BorderRadius.only(
                                           bottomLeft: Radius.circular(10.0),
                                           bottomRight: Radius.circular(10.0),
                                           topLeft: Radius.circular(10.0),
@@ -185,15 +182,24 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(2.0),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://firebasestorage.googleapis.com/v0/b/trial-gs.appspot.com/o/users%2FPXL_20240221_164222455.jpg?alt=media&token=797317c0-fcf7-4edb-8af1-5c8c754adbf1',
-                                            width: 120.0,
-                                            height: 120.0,
-                                            fit: BoxFit.cover,
+                                        padding: const EdgeInsets.all(2.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed('MapsTrial');
+                                          },
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                            child: Image.network(
+                                              'https://firebasestorage.googleapis.com/v0/b/trial-gs.appspot.com/o/users%2FPXL_20240221_164222455.jpg?alt=media&token=797317c0-fcf7-4edb-8af1-5c8c754adbf1',
+                                              width: 120.0,
+                                              height: 120.0,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -201,7 +207,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                     Expanded(
                                       flex: 4,
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -225,7 +231,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                                       ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 12.0, 0.0),
                                               child: Text(
@@ -246,7 +252,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                                     ),
                                               ),
                                             ),
-                                          ].divide(SizedBox(height: 4.0)),
+                                          ].divide(const SizedBox(height: 4.0)),
                                         ),
                                       ),
                                     ),
@@ -264,7 +270,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                     blurRadius: 0.0,
                                     color:
                                         FlutterFlowTheme.of(context).alternate,
-                                    offset: Offset(
+                                    offset: const Offset(
                                       0.0,
                                       1.0,
                                     ),
@@ -272,7 +278,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                 ],
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 12.0, 16.0, 12.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -283,7 +289,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .accent1,
-                                        borderRadius: BorderRadius.only(
+                                        borderRadius: const BorderRadius.only(
                                           bottomLeft: Radius.circular(10.0),
                                           bottomRight: Radius.circular(10.0),
                                           topLeft: Radius.circular(10.0),
@@ -296,7 +302,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(2.0),
+                                        padding: const EdgeInsets.all(2.0),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(8.0),
@@ -312,7 +318,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                     Expanded(
                                       flex: 4,
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -336,7 +342,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                                       ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 12.0, 0.0),
                                               child: Text(
@@ -357,7 +363,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                                     ),
                                               ),
                                             ),
-                                          ].divide(SizedBox(height: 4.0)),
+                                          ].divide(const SizedBox(height: 4.0)),
                                         ),
                                       ),
                                     ),
@@ -375,7 +381,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                     blurRadius: 0.0,
                                     color:
                                         FlutterFlowTheme.of(context).alternate,
-                                    offset: Offset(
+                                    offset: const Offset(
                                       0.0,
                                       1.0,
                                     ),
@@ -383,7 +389,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                 ],
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 12.0, 16.0, 12.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -394,7 +400,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .accent1,
-                                        borderRadius: BorderRadius.only(
+                                        borderRadius: const BorderRadius.only(
                                           bottomLeft: Radius.circular(10.0),
                                           bottomRight: Radius.circular(10.0),
                                           topLeft: Radius.circular(10.0),
@@ -407,7 +413,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(2.0),
+                                        padding: const EdgeInsets.all(2.0),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(8.0),
@@ -423,7 +429,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                     Expanded(
                                       flex: 4,
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -447,7 +453,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                                       ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 12.0, 0.0),
                                               child: Text(
@@ -468,7 +474,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                                     ),
                                               ),
                                             ),
-                                          ].divide(SizedBox(height: 4.0)),
+                                          ].divide(const SizedBox(height: 4.0)),
                                         ),
                                       ),
                                     ),
@@ -476,7 +482,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                 ),
                               ),
                             ),
-                          ].divide(SizedBox(height: 1.0)),
+                          ].divide(const SizedBox(height: 1.0)),
                         ),
                       ],
                     ),

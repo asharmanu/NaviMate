@@ -8,11 +8,14 @@ import 'schema/util/firestore_util.dart';
 import 'schema/users_record.dart';
 import 'schema/general_practitioners_record.dart';
 import 'schema/hospitals_record.dart';
-import 'schema/reviews_record.dart';
 import 'schema/gen_prac_review_record.dart';
+import 'schema/nothing_record.dart';
+import 'schema/specialists_record.dart';
+import 'schema/specialist_collection_record.dart';
+import 'schema/appointments_record.dart';
 
 export 'dart:async' show StreamSubscription;
-export 'package:cloud_firestore/cloud_firestore.dart';
+export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
 export 'package:firebase_core/firebase_core.dart';
 export 'schema/index.dart';
 export 'schema/util/firestore_util.dart';
@@ -21,8 +24,11 @@ export 'schema/util/schema_util.dart';
 export 'schema/users_record.dart';
 export 'schema/general_practitioners_record.dart';
 export 'schema/hospitals_record.dart';
-export 'schema/reviews_record.dart';
 export 'schema/gen_prac_review_record.dart';
+export 'schema/nothing_record.dart';
+export 'schema/specialists_record.dart';
+export 'schema/specialist_collection_record.dart';
+export 'schema/appointments_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -135,46 +141,6 @@ Future<List<HospitalsRecord>> queryHospitalsRecordOnce({
       singleRecord: singleRecord,
     );
 
-/// Functions to query ReviewsRecords (as a Stream and as a Future).
-Future<int> queryReviewsRecordCount({
-  DocumentReference? parent,
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      ReviewsRecord.collection(parent),
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<ReviewsRecord>> queryReviewsRecord({
-  DocumentReference? parent,
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      ReviewsRecord.collection(parent),
-      ReviewsRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<ReviewsRecord>> queryReviewsRecordOnce({
-  DocumentReference? parent,
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      ReviewsRecord.collection(parent),
-      ReviewsRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
 /// Functions to query GenPracReviewRecords (as a Stream and as a Future).
 Future<int> queryGenPracReviewRecordCount({
   Query Function(Query)? queryBuilder,
@@ -207,6 +173,154 @@ Future<List<GenPracReviewRecord>> queryGenPracReviewRecordOnce({
     queryCollectionOnce(
       GenPracReviewRecord.collection,
       GenPracReviewRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query NothingRecords (as a Stream and as a Future).
+Future<int> queryNothingRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      NothingRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<NothingRecord>> queryNothingRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      NothingRecord.collection,
+      NothingRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<NothingRecord>> queryNothingRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      NothingRecord.collection,
+      NothingRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query SpecialistsRecords (as a Stream and as a Future).
+Future<int> querySpecialistsRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      SpecialistsRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<SpecialistsRecord>> querySpecialistsRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      SpecialistsRecord.collection,
+      SpecialistsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<SpecialistsRecord>> querySpecialistsRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      SpecialistsRecord.collection,
+      SpecialistsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query SpecialistCollectionRecords (as a Stream and as a Future).
+Future<int> querySpecialistCollectionRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      SpecialistCollectionRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<SpecialistCollectionRecord>> querySpecialistCollectionRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      SpecialistCollectionRecord.collection,
+      SpecialistCollectionRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<SpecialistCollectionRecord>> querySpecialistCollectionRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      SpecialistCollectionRecord.collection,
+      SpecialistCollectionRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query AppointmentsRecords (as a Stream and as a Future).
+Future<int> queryAppointmentsRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      AppointmentsRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<AppointmentsRecord>> queryAppointmentsRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      AppointmentsRecord.collection,
+      AppointmentsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<AppointmentsRecord>> queryAppointmentsRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      AppointmentsRecord.collection,
+      AppointmentsRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
@@ -331,7 +445,7 @@ Future<FFFirestorePage<T>> queryCollectionPage<T>(
   } else {
     docSnapshot = await query.get();
   }
-  final getDocs = (QuerySnapshot s) => s.docs
+  getDocs(QuerySnapshot s) => s.docs
       .map(
         (d) => safeGet(
           () => recordBuilder(d),

@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'a_o_k_insur_model.dart';
 export 'a_o_k_insur_model.dart';
 
@@ -50,7 +47,7 @@ class _AOKInsurWidgetState extends State<AOKInsurWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -70,14 +67,14 @@ class _AOKInsurWidgetState extends State<AOKInsurWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -85,7 +82,7 @@ class _AOKInsurWidgetState extends State<AOKInsurWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         's5pcre25' /* Allgemeine Ortskrankenkasse */,
@@ -100,7 +97,7 @@ class _AOKInsurWidgetState extends State<AOKInsurWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 13.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 13.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         '2slyubf0' /* AOK is one of the biggest heal... */,
@@ -114,7 +111,7 @@ class _AOKInsurWidgetState extends State<AOKInsurWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 8.0, 18.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 8.0, 18.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'k2d77ff0' /* AOK is a provider of statutory... */,

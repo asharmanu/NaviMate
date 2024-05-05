@@ -1,4 +1,4 @@
-package com.mycompany.justtriallll
+package com.mycompany.navimate
 
 import io.flutter.embedding.android.FlutterActivity
 

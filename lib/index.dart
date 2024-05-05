@@ -18,4 +18,24 @@ export '/verify_email/verify_email_widget.dart' show VerifyEmailWidget;
 export '/about_us/about_us_widget.dart' show AboutUsWidget;
 export '/gen_prac_description/gen_prac_description_widget.dart'
     show GenPracDescriptionWidget;
-export '/genpracti_copy/genpracti_copy_widget.dart' show GenpractiCopyWidget;
+export '/genpracti_copy_copy/genpracti_copy_copy_widget.dart'
+    show GenpractiCopyCopyWidget;
+export '/terms_conditions/terms_conditions_widget.dart'
+    show TermsConditionsWidget;
+export '/maps_trial/maps_trial_widget.dart' show MapsTrialWidget;
+export '/write_review/write_review_widget.dart' show WriteReviewWidget;
+export '/specialists_page/specialists_page_widget.dart'
+    show SpecialistsPageWidget;
+export '/specialists_page_list_n_o_t_w_o_r_k_n_g/specialists_page_list_n_o_t_w_o_r_k_n_g_widget.dart'
+    show SpecialistsPageListNOTWORKNGWidget;
+export '/gen_prac_description_not_using/gen_prac_description_not_using_widget.dart'
+    show GenPracDescriptionNotUsingWidget;
+export '/make_reminder/make_reminder_widget.dart' show MakeReminderWidget;
+export '/specialist_search_final/specialist_search_final_widget.dart'
+    show SpecialistSearchFinalWidget;
+export '/specialists_description/specialists_description_widget.dart'
+    show SpecialistsDescriptionWidget;
+export '/hospitals_main_page/hospitals_main_page_widget.dart'
+    show HospitalsMainPageWidget;
+export '/hospitals_description/hospitals_description_widget.dart'
+    show HospitalsDescriptionWidget;

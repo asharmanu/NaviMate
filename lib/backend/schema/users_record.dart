@@ -6,13 +6,12 @@ import '/backend/schema/util/firestore_util.dart';
 import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
-import '/flutter_flow/flutter_flow_util.dart';
 
 class UsersRecord extends FirestoreRecord {
   UsersRecord._(
-    DocumentReference reference,
-    Map<String, dynamic> data,
-  ) : super(reference, data) {
+    super.reference,
+    super.data,
+  ) {
     _initializeFields();
   }
 
@@ -25,6 +24,11 @@ class UsersRecord extends FirestoreRecord {
   String? _displayName;
   String get displayName => _displayName ?? '';
   bool hasDisplayName() => _displayName != null;
+
+  // "photo_url" field.
+  String? _photoUrl;
+  String get photoUrl => _photoUrl ?? '';
+  bool hasPhotoUrl() => _photoUrl != null;
 
   // "uid" field.
   String? _uid;
@@ -41,36 +45,31 @@ class UsersRecord extends FirestoreRecord {
   String get phoneNumber => _phoneNumber ?? '';
   bool hasPhoneNumber() => _phoneNumber != null;
 
-  // "university" field.
-  String? _university;
-  String get university => _university ?? '';
-  bool hasUniversity() => _university != null;
-
-  // "photo_url" field.
-  String? _photoUrl;
-  String get photoUrl => _photoUrl ?? '';
-  bool hasPhotoUrl() => _photoUrl != null;
-
   // "country" field.
   String? _country;
   String get country => _country ?? '';
   bool hasCountry() => _country != null;
 
   // "birth_date" field.
-  DateTime? _birthDate;
-  DateTime? get birthDate => _birthDate;
+  String? _birthDate;
+  String get birthDate => _birthDate ?? '';
   bool hasBirthDate() => _birthDate != null;
+
+  // "university" field.
+  String? _university;
+  String get university => _university ?? '';
+  bool hasUniversity() => _university != null;
 
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
+    _photoUrl = snapshotData['photo_url'] as String?;
     _uid = snapshotData['uid'] as String?;
     _createdTime = snapshotData['created_time'] as DateTime?;
     _phoneNumber = snapshotData['phone_number'] as String?;
-    _university = snapshotData['university'] as String?;
-    _photoUrl = snapshotData['photo_url'] as String?;
     _country = snapshotData['country'] as String?;
-    _birthDate = snapshotData['birth_date'] as DateTime?;
+    _birthDate = snapshotData['birth_date'] as String?;
+    _university = snapshotData['university'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -109,25 +108,25 @@ class UsersRecord extends FirestoreRecord {
 Map<String, dynamic> createUsersRecordData({
   String? email,
   String? displayName,
+  String? photoUrl,
   String? uid,
   DateTime? createdTime,
   String? phoneNumber,
-  String? university,
-  String? photoUrl,
   String? country,
-  DateTime? birthDate,
+  String? birthDate,
+  String? university,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'email': email,
       'display_name': displayName,
+      'photo_url': photoUrl,
       'uid': uid,
       'created_time': createdTime,
       'phone_number': phoneNumber,
-      'university': university,
-      'photo_url': photoUrl,
       'country': country,
       'birth_date': birthDate,
+      'university': university,
     }.withoutNulls,
   );
 
@@ -141,26 +140,26 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
   bool equals(UsersRecord? e1, UsersRecord? e2) {
     return e1?.email == e2?.email &&
         e1?.displayName == e2?.displayName &&
+        e1?.photoUrl == e2?.photoUrl &&
         e1?.uid == e2?.uid &&
         e1?.createdTime == e2?.createdTime &&
         e1?.phoneNumber == e2?.phoneNumber &&
-        e1?.university == e2?.university &&
-        e1?.photoUrl == e2?.photoUrl &&
         e1?.country == e2?.country &&
-        e1?.birthDate == e2?.birthDate;
+        e1?.birthDate == e2?.birthDate &&
+        e1?.university == e2?.university;
   }
 
   @override
   int hash(UsersRecord? e) => const ListEquality().hash([
         e?.email,
         e?.displayName,
+        e?.photoUrl,
         e?.uid,
         e?.createdTime,
         e?.phoneNumber,
-        e?.university,
-        e?.photoUrl,
         e?.country,
-        e?.birthDate
+        e?.birthDate,
+        e?.university
       ]);
 
   @override
