@@ -1,3 +1,58 @@
 {
-  "indexes": []
+  "indexes": [
+    {
+      "collectionGroup": "GeneralPractitioners",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Filter",
+          "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "netLike",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Specialists",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Speciality",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Filter",
+          "arrayConfig": "CONTAINS"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Specialists",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Filter",
+          "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "netLike",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": [
+    {
+      "collectionGroup": "fcm_tokens",
+      "fieldPath": "fcm_token",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    }
+  ]
 }

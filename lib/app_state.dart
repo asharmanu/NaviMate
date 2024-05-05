@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import '/backend/backend.dart';
-import 'backend/api_requests/api_manager.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'flutter_flow/flutter_flow_util.dart';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -26,7 +22,25 @@ class FFAppState extends ChangeNotifier {
 
   bool _showFullList = true;
   bool get showFullList => _showFullList;
-  set showFullList(bool _value) {
-    _showFullList = _value;
+  set showFullList(bool value) {
+    _showFullList = value;
+  }
+
+  bool _showFullList2 = true;
+  bool get showFullList2 => _showFullList2;
+  set showFullList2(bool value) {
+    _showFullList2 = value;
+  }
+
+  bool _sort = false;
+  bool get sort => _sort;
+  set sort(bool value) {
+    _sort = value;
+  }
+
+  bool _showFullList3 = true;
+  bool get showFullList3 => _showFullList3;
+  set showFullList3(bool value) {
+    _showFullList3 = value;
   }
 }

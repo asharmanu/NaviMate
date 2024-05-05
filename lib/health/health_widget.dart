@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'health_model.dart';
 export 'health_model.dart';
 
@@ -41,7 +38,7 @@ class _HealthWidgetState extends State<HealthWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFFE5EEFF),
+        backgroundColor: const Color(0xFFE5EEFF),
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
@@ -50,7 +47,7 @@ class _HealthWidgetState extends State<HealthWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -68,19 +65,19 @@ class _HealthWidgetState extends State<HealthWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(30.0, 16.0, 30.0, 16.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(30.0, 16.0, 30.0, 16.0),
               child: GridView(
                 padding: EdgeInsets.zero,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 30.0,
                   mainAxisSpacing: 30.0,
@@ -128,7 +125,7 @@ class _HealthWidgetState extends State<HealthWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('GenpractiCopy');
+                        context.pushNamed('GenpractiCopyCopy');
                       },
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
@@ -154,7 +151,7 @@ class _HealthWidgetState extends State<HealthWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('Hospitals');
+                        context.pushNamed('HospitalsMainPage');
                       },
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
@@ -180,7 +177,7 @@ class _HealthWidgetState extends State<HealthWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('Specialist');
+                        context.pushNamed('SpecialistsPage');
                       },
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),

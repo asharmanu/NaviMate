@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "834455485925",
-    "project_id": "navimate-4468c",
-    "storage_bucket": "navimate-4468c.appspot.com"
+    "project_number": "541167906916",
+    "project_id": "navimate-database",
+    "storage_bucket": "navimate-database.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:834455485925:android:e4ebeedc3a79b0b3ba430c",
+        "mobilesdk_app_id": "1:541167906916:android:1f12a69e43d1f1c0a7ef71",
         "android_client_info": {
-          "package_name": "com.mycompany.justtriallll"
+          "package_name": "com.mycompany.navimate"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDNXmDFq16tJpzXG4pSllBUWwkZpRsSE2Y"
+          "current_key": "AIzaSyAvgKCQnImPHOGK-79O8qSNo4_Qx9sGIfM"
         }
       ],
       "services": {

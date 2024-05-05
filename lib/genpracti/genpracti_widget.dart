@@ -2,11 +2,8 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'genpracti_model.dart';
 export 'genpracti_model.dart';
 
@@ -68,7 +65,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -81,7 +78,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
               children: [
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 16.0),
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 16.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       'tcsn6t51' /* Near Campus */,
@@ -93,13 +90,13 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
                         child: Material(
                           color: Colors.transparent,
                           elevation: 2.0,
@@ -110,7 +107,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                   .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 12.0, 12.0, 12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -129,7 +126,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           2.0, 2.0, 2.0, 2.0),
                                       child: ClipRRect(
                                         borderRadius:
@@ -145,7 +142,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -241,7 +238,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                                     ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: InkWell(
                                                   splashColor:
@@ -290,7 +287,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                                 size: 20.0,
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         3.0, 12.0, 0.0, 4.0),
                                                 child: InkWell(
@@ -339,7 +336,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
                         child: Material(
                           color: Colors.transparent,
                           elevation: 2.0,
@@ -350,7 +347,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                   .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 12.0, 12.0, 12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -369,7 +366,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           2.0, 2.0, 2.0, 2.0),
                                       child: ClipRRect(
                                         borderRadius:
@@ -385,7 +382,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -437,7 +434,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                                     ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: InkWell(
                                                   splashColor:
@@ -464,7 +461,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                                           fontFamily:
                                                               'Readex Pro',
                                                           color:
-                                                              Color(0xFF058A85),
+                                                              const Color(0xFF058A85),
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -477,13 +474,13 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             children: [
-                                              FaIcon(
+                                              const FaIcon(
                                                 FontAwesomeIcons.phone,
                                                 color: Color(0xFF058A85),
                                                 size: 20.0,
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         3.0, 12.0, 0.0, 4.0),
                                                 child: InkWell(
@@ -511,7 +508,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                                           fontFamily:
                                                               'Readex Pro',
                                                           color:
-                                                              Color(0xFF058A85),
+                                                              const Color(0xFF058A85),
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -531,7 +528,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
                         child: Material(
                           color: Colors.transparent,
                           elevation: 2.0,
@@ -542,7 +539,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                   .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 12.0, 12.0, 12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -561,7 +558,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           2.0, 2.0, 2.0, 2.0),
                                       child: ClipRRect(
                                         borderRadius:
@@ -577,7 +574,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -629,7 +626,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                                     ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: InkWell(
                                                   splashColor:
@@ -678,7 +675,7 @@ class _GenpractiWidgetState extends State<GenpractiWidget> {
                                                 size: 20.0,
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         3.0, 12.0, 0.0, 4.0),
                                                 child: InkWell(

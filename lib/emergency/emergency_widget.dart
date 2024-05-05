@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'emergency_model.dart';
 export 'emergency_model.dart';
@@ -51,7 +48,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -69,20 +66,20 @@ class _EmergencyWidgetState extends State<EmergencyWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 30.0, 16.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 30.0, 16.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       '23mpnfxc' /* Emergency Hotline */,
@@ -97,13 +94,13 @@ class _EmergencyWidgetState extends State<EmergencyWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 4.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 4.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             '05e61u9j' /* Fire: */,
@@ -121,7 +118,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 5.0),
+                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 5.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -138,7 +135,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget> {
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Readex Pro',
-                                  color: Color(0xFFB62D34),
+                                  color: const Color(0xFFB62D34),
                                   fontSize: 22.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
@@ -150,13 +147,13 @@ class _EmergencyWidgetState extends State<EmergencyWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 4.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 4.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             'wcbzthuw' /* Police: */,
@@ -174,7 +171,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 5.0),
+                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 5.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -191,7 +188,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget> {
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Readex Pro',
-                                  color: Color(0xFFB62D34),
+                                  color: const Color(0xFFB62D34),
                                   fontSize: 22.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
@@ -203,13 +200,13 @@ class _EmergencyWidgetState extends State<EmergencyWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 4.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 4.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             'su3rnus9' /* Medical: */,
@@ -227,7 +224,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget> {
                       ),
                       Builder(
                         builder: (context) => Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 0.0, 5.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -249,7 +246,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Readex Pro',
-                                    color: Color(0xFFB62D34),
+                                    color: const Color(0xFFB62D34),
                                     fontSize: 22.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
@@ -262,13 +259,13 @@ class _EmergencyWidgetState extends State<EmergencyWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 4.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 4.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             's3tujxw9' /* Campus security: */,
@@ -286,7 +283,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 5.0),
+                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 5.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -303,7 +300,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget> {
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Readex Pro',
-                                  color: Color(0xFFB62D34),
+                                  color: const Color(0xFFB62D34),
                                   fontSize: 22.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
@@ -315,7 +312,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 25.0, 0.0, 4.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 25.0, 0.0, 4.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       'bgzr8zb2' /* In case of an emergency, follo... */,
@@ -330,7 +327,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 2.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 2.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       'i8x0joab' /* 1. Stay calm and assess the si... */,
@@ -345,7 +342,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 2.0, 0.0, 2.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 2.0, 0.0, 2.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       'uu7t3oqe' /* 2. Call the local emergency nu... */,
@@ -360,7 +357,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 2.0, 0.0, 2.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 2.0, 0.0, 2.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       '4mz3n3tq' /* 3. Provide clear and accurate ... */,
@@ -375,7 +372,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 2.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 2.0, 0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       '0doilq9i' /* 4. Follow the instructions giv... */,

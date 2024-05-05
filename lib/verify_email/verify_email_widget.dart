@@ -4,8 +4,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'verify_email_model.dart';
 export 'verify_email_model.dart';
 
@@ -47,7 +45,7 @@ class _VerifyEmailWidgetState extends State<VerifyEmailWidget> {
           borderRadius: 30.0,
           borderWidth: 1.0,
           buttonSize: 60.0,
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back_rounded,
             color: Colors.white,
             size: 30.0,
@@ -57,7 +55,7 @@ class _VerifyEmailWidgetState extends State<VerifyEmailWidget> {
           },
         ),
         title: Align(
-          alignment: AlignmentDirectional(0.0, 0.0),
+          alignment: const AlignmentDirectional(0.0, 0.0),
           child: Text(
             FFLocalizations.of(context).getText(
               'uejzo576' /* Verify E-mail! */,
@@ -70,7 +68,7 @@ class _VerifyEmailWidgetState extends State<VerifyEmailWidget> {
                 ),
           ),
         ),
-        actions: [],
+        actions: const [],
         centerTitle: true,
         elevation: 2.0,
       ),
@@ -81,9 +79,9 @@ class _VerifyEmailWidgetState extends State<VerifyEmailWidget> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Align(
-              alignment: AlignmentDirectional(0.0, 1.0),
+              alignment: const AlignmentDirectional(0.0, 1.0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 15.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 15.0),
                 child: Container(
                   width: 130.0,
                   height: 130.0,
@@ -96,9 +94,9 @@ class _VerifyEmailWidgetState extends State<VerifyEmailWidget> {
                     ),
                   ),
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
-                      padding: EdgeInsets.all(4.0),
+                      padding: const EdgeInsets.all(4.0),
                       child: AuthUserStreamWidget(
                         builder: (context) => ClipRRect(
                           borderRadius: BorderRadius.circular(50.0),
@@ -116,7 +114,7 @@ class _VerifyEmailWidgetState extends State<VerifyEmailWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(25.0, 15.0, 25.0, 15.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(25.0, 15.0, 25.0, 15.0),
               child: Text(
                 FFLocalizations.of(context).getText(
                   '5goyckpx' /* Verification link was sent! 
@@ -131,9 +129,9 @@ P... */
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(0.0, 0.05),
+              alignment: const AlignmentDirectional(0.0, 0.05),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     await authManager.refreshUser();
@@ -144,13 +142,13 @@ P... */
                         context: context,
                         builder: (alertDialogContext) {
                           return AlertDialog(
-                            title: Text('Not verified!'),
-                            content: Text('Please try again!'),
+                            title: const Text('Not verified!'),
+                            content: const Text('Please try again!'),
                             actions: [
                               TextButton(
                                 onPressed: () =>
                                     Navigator.pop(alertDialogContext),
-                                child: Text('Ok'),
+                                child: const Text('Ok'),
                               ),
                             ],
                           );
@@ -164,9 +162,9 @@ P... */
                   options: FFButtonOptions(
                     width: 270.0,
                     height: 50.0,
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle:
                         FlutterFlowTheme.of(context).titleMedium.override(
@@ -175,7 +173,7 @@ P... */
                               letterSpacing: 0.0,
                             ),
                     elevation: 2.0,
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),
