@@ -327,7 +327,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 2.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 2.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       'i8x0joab' /* 1. Stay calm and assess the si... */,

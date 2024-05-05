@@ -101,7 +101,7 @@ class _SpecialistSearchFinalWidgetState
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
-                    context.pushNamed('MapsTrial');
+                    context.pushNamed('MapsGenPrac');
                   },
                   child: FaIcon(
                     FontAwesomeIcons.mapMarkedAlt,
@@ -581,8 +581,7 @@ class _SpecialistSearchFinalWidgetState
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            childrenItem
-                                                                .nameSurname,
+                                                            childrenItem.clinic,
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyLarge
@@ -710,10 +709,26 @@ class _SpecialistSearchFinalWidgetState
                                                                       Colors
                                                                           .transparent,
                                                                   onTap:
-                                                                      () async {},
+                                                                      () async {
+                                                                    await launchURL((String
+                                                                        phone) {
+                                                                      return "tel:+$phone";
+                                                                    }(childrenItem
+                                                                        .phoneNumber
+                                                                        .toString()));
+                                                                  },
                                                                   child: Text(
-                                                                    childrenItem
-                                                                        .number,
+                                                                    formatNumber(
+                                                                      childrenItem
+                                                                          .phoneNumber,
+                                                                      formatType:
+                                                                          FormatType
+                                                                              .custom,
+                                                                      format:
+                                                                          '+',
+                                                                      locale:
+                                                                          '',
+                                                                    ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodySmall
@@ -746,7 +761,7 @@ class _SpecialistSearchFinalWidgetState
                               },
                             ),
                           ),
-                          if (FFAppState().showFullList &&
+                          if (FFAppState().showFullList2 &&
                               (_model.sortByValue != 'Reviews'))
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -754,8 +769,13 @@ class _SpecialistSearchFinalWidgetState
                               child: StreamBuilder<List<SpecialistsRecord>>(
                                 stream: querySpecialistsRecord(
                                   queryBuilder: (specialistsRecord) =>
-                                      specialistsRecord.whereArrayContainsAny(
-                                          'Filter', _model.choiceChipsValues),
+                                      specialistsRecord
+                                          .whereArrayContainsAny('Filter',
+                                              _model.choiceChipsValues)
+                                          .where(
+                                            'Speciality',
+                                            isEqualTo: widget.speciality,
+                                          ),
                                 ),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
@@ -884,7 +904,7 @@ class _SpecialistSearchFinalWidgetState
                                                           children: [
                                                             Text(
                                                               columnSpecialistsRecord
-                                                                  .nameSurname,
+                                                                  .clinic,
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyLarge
@@ -1016,10 +1036,22 @@ class _SpecialistSearchFinalWidgetState
                                                                         Colors
                                                                             .transparent,
                                                                     onTap:
-                                                                        () async {},
+                                                                        () async {
+                                                                      await launchURL(columnSpecialistsRecord
+                                                                          .phoneNumber
+                                                                          .toString());
+                                                                    },
                                                                     child: Text(
-                                                                      columnSpecialistsRecord
-                                                                          .number,
+                                                                      formatNumber(
+                                                                        columnSpecialistsRecord
+                                                                            .phoneNumber,
+                                                                        formatType:
+                                                                            FormatType.custom,
+                                                                        format:
+                                                                            '+',
+                                                                        locale:
+                                                                            '',
+                                                                      ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodySmall
@@ -1052,7 +1084,7 @@ class _SpecialistSearchFinalWidgetState
                                 },
                               ),
                             ),
-                          if (FFAppState().showFullList &&
+                          if (FFAppState().showFullList2 &&
                               (_model.sortByValue == 'Reviews'))
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1063,6 +1095,10 @@ class _SpecialistSearchFinalWidgetState
                                       specialistsRecord
                                           .whereArrayContainsAny('Filter',
                                               _model.choiceChipsValues)
+                                          .where(
+                                            'Speciality',
+                                            isEqualTo: widget.speciality,
+                                          )
                                           .orderBy('netLike', descending: true),
                                 ),
                                 builder: (context, snapshot) {
@@ -1192,7 +1228,7 @@ class _SpecialistSearchFinalWidgetState
                                                           children: [
                                                             Text(
                                                               columnSpecialistsRecord
-                                                                  .nameSurname,
+                                                                  .clinic,
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyLarge
@@ -1309,20 +1345,52 @@ class _SpecialistSearchFinalWidgetState
                                                                           12.0,
                                                                           0.0,
                                                                           4.0),
-                                                                  child: Text(
-                                                                    columnSpecialistsRecord
-                                                                        .number,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodySmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Readex Pro',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primary,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
+                                                                  child:
+                                                                      InkWell(
+                                                                    splashColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    focusColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    hoverColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    highlightColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    onTap:
+                                                                        () async {
+                                                                      await launchURL((String
+                                                                          phone) {
+                                                                        return "tel:+$phone";
+                                                                      }(columnSpecialistsRecord
+                                                                          .phoneNumber
+                                                                          .toString()));
+                                                                    },
+                                                                    child: Text(
+                                                                      formatNumber(
+                                                                        columnSpecialistsRecord
+                                                                            .phoneNumber,
+                                                                        formatType:
+                                                                            FormatType.custom,
+                                                                        format:
+                                                                            '+',
+                                                                        locale:
+                                                                            '',
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodySmall
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Readex Pro',
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
+                                                                    ),
                                                                   ),
                                                                 ),
                                                               ],

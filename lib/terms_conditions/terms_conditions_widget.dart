@@ -58,7 +58,7 @@ class _TermsConditionsWidgetState extends State<TermsConditionsWidget> {
           ),
           title: Text(
             FFLocalizations.of(context).getText(
-              '28z3tkgy' /* About us */,
+              '28z3tkgy' /* Navimate Terms & Conditions */,
             ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Outfit',
@@ -86,28 +86,31 @@ class _TermsConditionsWidgetState extends State<TermsConditionsWidget> {
                       maxWidth: 970.0,
                     ),
                     decoration: const BoxDecoration(),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 16.0, 0.0, 4.0),
-                          child: Text(
-                            FFLocalizations.of(context).getText(
-                              'ex7e427r' /* Navimate Terms & Conditions
-1.... */
-                              ,
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                16.0, 16.0, 16.0, 16.0),
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                'ex7e427r' /* 1. Introduction
+
+Welcome to Na... */
+                                ,
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                             ),
-                            style: FlutterFlowTheme.of(context)
-                                .headlineMedium
-                                .override(
-                                  fontFamily: 'Outfit',
-                                  letterSpacing: 0.0,
-                                ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),

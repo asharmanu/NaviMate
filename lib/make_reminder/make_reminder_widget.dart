@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'make_reminder_model.dart';
 export 'make_reminder_model.dart';
@@ -334,9 +335,8 @@ class _MakeReminderWidgetState extends State<MakeReminderWidget> {
                                     ),
                               ),
                               Icon(
-                                Icons.settings_outlined,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
+                                Icons.calendar_month,
+                                color: FlutterFlowTheme.of(context).primary,
                                 size: 24.0,
                               ),
                             ],
@@ -386,9 +386,11 @@ class _MakeReminderWidgetState extends State<MakeReminderWidget> {
                         return FFButtonWidget(
                           onPressed: () async {
                             triggerPushNotification(
-                              notificationTitle: 'Reminder!!!',
-                              notificationText: 'Please check the reminder!',
-                              scheduledTime: _model.datePicked!,
+                              notificationTitle: 'Appointment reminder!!!',
+                              notificationText:
+                                  'You have an appointment within an hours! Please check the reminder!',
+                              scheduledTime: functions
+                                  .timeChangerFunction(_model.datePicked)!,
                               userRefs: [currentUserReference!],
                               initialPageName: 'Notification',
                               parameterData: {},

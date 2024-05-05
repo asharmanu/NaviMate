@@ -2,7 +2,6 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
@@ -119,6 +118,7 @@ class _WriteReviewWidgetState extends State<WriteReviewWidget> {
                         writeReviewGeneralPractitionersRecord.nameSurname,
                         style: FlutterFlowTheme.of(context).titleLarge.override(
                               fontFamily: 'Outfit',
+                              color: FlutterFlowTheme.of(context).secondaryText,
                               letterSpacing: 0.0,
                             ),
                       ),
@@ -139,7 +139,8 @@ class _WriteReviewWidgetState extends State<WriteReviewWidget> {
                               .titleMedium
                               .override(
                                 fontFamily: 'Readex Pro',
-                                color: FlutterFlowTheme.of(context).primaryText,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
                                 letterSpacing: 0.0,
                               ),
                         ),
@@ -175,8 +176,8 @@ class _WriteReviewWidgetState extends State<WriteReviewWidget> {
                                 .titleMedium
                                 .override(
                                   fontFamily: 'Readex Pro',
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
                                   letterSpacing: 0.0,
                                 ),
                           ),
@@ -211,28 +212,28 @@ class _WriteReviewWidgetState extends State<WriteReviewWidget> {
                                 ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).secondaryText,
+                            color: FlutterFlowTheme.of(context).alternate,
                             width: 2.0,
                           ),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                            color: Color(0x00000000),
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).primary,
                             width: 2.0,
                           ),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         errorBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                            color: Color(0x00000000),
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
                             width: 2.0,
                           ),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedErrorBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                            color: Color(0x00000000),
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
                             width: 2.0,
                           ),
                           borderRadius: BorderRadius.circular(8.0),
@@ -245,56 +246,6 @@ class _WriteReviewWidgetState extends State<WriteReviewWidget> {
                       maxLines: 7,
                       validator:
                           _model.textControllerValidator.asValidator(context),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        ToggleIcon(
-                          onPressed: () async {
-                            final likedByElement = currentUserReference;
-                            final likedByUpdate =
-                                writeReviewGeneralPractitionersRecord.likedBy
-                                        .contains(likedByElement)
-                                    ? FieldValue.arrayRemove([likedByElement])
-                                    : FieldValue.arrayUnion([likedByElement]);
-                            await writeReviewGeneralPractitionersRecord
-                                .reference
-                                .update({
-                              ...mapToFirestore(
-                                {
-                                  'Liked_by': likedByUpdate,
-                                },
-                              ),
-                            });
-                          },
-                          value: writeReviewGeneralPractitionersRecord.likedBy
-                              .contains(currentUserReference),
-                          onIcon: Icon(
-                            Icons.thumb_up,
-                            color: FlutterFlowTheme.of(context).primary,
-                            size: 25.0,
-                          ),
-                          offIcon: Icon(
-                            Icons.thumb_up_outlined,
-                            color: FlutterFlowTheme.of(context).primary,
-                            size: 25.0,
-                          ),
-                        ),
-                        Text(
-                          writeReviewGeneralPractitionersRecord.likedBy.length
-                              .toString(),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Readex Pro',
-                                    letterSpacing: 0.0,
-                                  ),
-                        ),
-                      ],
                     ),
                   ),
                   Padding(
@@ -314,11 +265,29 @@ class _WriteReviewWidgetState extends State<WriteReviewWidget> {
                                   time: getCurrentTimestamp,
                                   doctor: widget.reff,
                                 ));
+                          } else {
+                            await GenPracReviewRecord.collection
+                                .doc()
+                                .set(createGenPracReviewRecordData(
+                                  commentText: _model.textController.text,
+                                  commentUser: currentUserReference,
+                                  time: getCurrentTimestamp,
+                                  doctor: widget.reff,
+                                ));
                           }
                         } else {
                           if (/* NOT RECOMMENDED */ _model
                                   .textController.text ==
                               'true') {
+                            await GenPracReviewRecord.collection
+                                .doc()
+                                .set(createGenPracReviewRecordData(
+                                  commentText: _model.textController.text,
+                                  commentUser: currentUserReference,
+                                  time: getCurrentTimestamp,
+                                  doctor: widget.reff,
+                                ));
+                          } else {
                             await GenPracReviewRecord.collection
                                 .doc()
                                 .set(createGenPracReviewRecordData(

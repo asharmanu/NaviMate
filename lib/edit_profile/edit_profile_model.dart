@@ -18,10 +18,6 @@ class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
   FocusNode? countryFocusNode;
   TextEditingController? countryTextController;
   String? Function(BuildContext, String?)? countryTextControllerValidator;
-  // State field(s) for birth_date widget.
-  FocusNode? birthDateFocusNode;
-  TextEditingController? birthDateTextController;
-  String? Function(BuildContext, String?)? birthDateTextControllerValidator;
   DateTime? datePicked;
 
   @override
@@ -34,8 +30,5 @@ class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
 
     countryFocusNode?.dispose();
     countryTextController?.dispose();
-
-    birthDateFocusNode?.dispose();
-    birthDateTextController?.dispose();
   }
 }

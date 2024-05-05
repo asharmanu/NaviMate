@@ -682,13 +682,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
     },
   },
-  // Hospitals
-  {
-    'dg1u0gsv': {
-      'en': 'Hospitals',
-      'de': '',
-    },
-  },
   // ForgotPassword
   {
     'hjv74hix': {
@@ -733,14 +726,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4ushal3e': {
       'en': 'Country from',
-      'de': '',
-    },
-    '5q0diffm': {
-      'en': 'Your birth date',
-      'de': '',
-    },
-    '2gywhbze': {
-      'en': 'Your birth date',
       'de': '',
     },
     'fym9m1tz': {
@@ -790,7 +775,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
     },
     'p8x338qe': {
-      'en': 'asharma@constructor.university',
+      'en': 'ansharma@constructor.university',
       'de': '',
     },
     'mof2vpcr': {
@@ -857,7 +842,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
     },
   },
-  // GenpractiCopyCopy
+  // GenpractiMainPage
   {
     'o0b2q1ud': {
       'en': 'Search all articles...',
@@ -924,11 +909,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'ex7e427r': {
       'en':
-          'Navimate Terms & Conditions\n1. Introduction\nWelcome to Navimate! These Terms & Conditions (\"T&Cs\") govern your access and use of the Navimate mobile application (\"App\"). By downloading, installing, or using the App, you agree to be bound by these T&Cs.\n2. User Accounts\n2.1 To fully enjoy the benefits of Navimate, you can create a user account. 2.2 Account creation requires you to be of legal age in Germany.\n 2.3 Your Navimate account will not be linked to any social media accounts.\n3. User Data & Privacy\n3.1 We collect the following personal information from you during account creation: name, surname, and email address. We may also collect your university affiliation optionally. 3.2 We do not use your personal information for marketing purposes (e.g., sending emails or newsletters). 3.3 We do not use any third-party digital analytics software to track your activity within the App. 3.4 We do not display advertisements within the App. 3.5 We take the privacy of your information seriously and will use it only for the purpose of providing and improving the Navimate service. 3.6 We comply with all applicable German data protection regulations, including the General Data Protection Regulation (GDPR).\n4. User Content & Intellectual Property\n3.1 You retain all ownership rights to the content you upload or post on the App (comments, photos, reviews). 3.2 By uploading content, you grant Navimate a non-exclusive, royalty-free license to use, reproduce, modify, publish, and distribute your content within the App, solely for the purpose of providing and improving the service. 3.3 Navimate owns all intellectual property rights associated with the App itself.\n5. Acceptable Use\n4.1 You agree to use the App in a lawful, respectful, and non-intrusive manner. 4.2 Prohibited activities include, but are not limited to: * Uploading illegal content or content that violates the rights of others (e.g., copyright infringement). * Hate speech, harassment, bullying, or threats. * Spam or commercially oriented content not approved by Navimate. * Distributing viruses or malware. * Interfering with the functionality of the App.\n6. Disclaimers & Limitation of Liability\n5.1 Navimate strives to provide a reliable and functional App. However, we cannot guarantee uninterrupted or error-free service. 5.2 The App is provided \"as is\" and to the extent permitted by law, Navimate disclaims all warranties, express or implied, including warranties of merchantability, fitness for a particular purpose, and non-infringement. 5.3 Navimate shall not be liable for any damages arising from your use of the App, including but not limited to, direct, indirect, incidental, consequential, or punitive damages.\n7. Termination\nNavimate reserves the right to suspend or terminate your account at any time without notice for violating the T&Cs.\n8. Governing Law & Dispute Resolution\nThese T&Cs are governed by and construed in accordance with the laws of Germany. Any dispute arising out of or relating to the T&Cs will be resolved by the competent courts of Germany.\n9. Modifications to T&Cs\nNavimate reserves the right to modify these T&Cs at any time. We will notify you of any changes by posting the revised T&Cs within the App. Your continued use of the App after the revised T&Cs are posted constitutes your agreement to the changes.\n10. Additional Permissions\n10.1 The App utilizes: * Geolocation: To provide location-based features and functionalities within the App. * Photo Gallery Access: To allow you to upload photos from your device when adding content to the App. 10.2 We will only access your geolocation and photo gallery with your permission.\n11. Contact Us\nIf you have any questions about these T&Cs, your privacy, or data usage, please contact us at [insert email address].\n',
+          '1. Introduction\n\nWelcome to Navimate! These Terms & Conditions govern your access and use of the Navimate mobile application. By downloading, installing, or using the App, you agree to be bound by these T&Cs.\n\n2. User Accounts\n\n2.1 To fully enjoy the benefits of Navimate, you can create a user account. \n2.2 Account creation requires you to be of legal age in Germany.\n2.3 Your Navimate account will not be linked to any social media accounts.\n\n3. User Data & Privacy\n\n3.1 We collect the following personal information from you during account creation: name, surname and email address. We also collect your university affiliation. \n3.2 We do not use your personal information for marketing purposes (e.g., sending emails or newsletters). \n3.3 We do not use any third-party digital analytics software to track your activity within the App. \n3.4 We do not display advertisements within the App. \n3.5 We take the privacy of your information seriously and will use it only for the purpose of providing and improving the Navimate service. \n3.6 We comply with all applicable German data protection regulations, including the General Data Protection Regulation (GDPR).\n\n4. User Content & Intellectual Property\n\n4.1 You retain all ownership rights to the content you upload or post on the App (comments, photos, reviews). \n4.2 By uploading content, you grant Navimate a non-exclusive, royalty-free license to use, reproduce, modify, publish, and distribute your content within the App, solely for the purpose of providing and improving the service. \n4.3 Navimate owns all intellectual property rights associated with the App itself.\n\n5. Acceptable Use\n\n5.1 You agree to use the App in a lawful, respectful, and non-intrusive manner. \n5.2 Prohibited activities include, but are not limited to: * Uploading illegal content or content that violates the rights of others (e.g., copyright infringement). Hate speech, harassment, bullying, or threats.  Spam or commercially oriented content not approved by Navimate. Distributing viruses or malware. Interfering with the functionality of the App.\n\n6. Disclaimers & Limitation of Liability\n\n6.1 Navimate strives to provide a reliable and functional App. However, we cannot guarantee uninterrupted or error-free service. \n6.2 The App is provided \"as is\" and to the extent permitted by law, Navimate disclaims all warranties, express or implied, including warranties of merchantability, fitness for a particular purpose, and non-infringement. \n6.3 Navimate shall not be liable for any damages arising from your use of the App, including but not limited to, direct, indirect, incidental, consequential, or punitive damages.\n\n7. Termination\n\nNavimate reserves the right to suspend or terminate your account at any time without notice for violating the T&Cs.\n\n8. Governing Law & Dispute Resolution\n\nThese T&Cs are governed by and construed in accordance with the laws of Germany. Any dispute arising out of or relating to the T&Cs will be resolved by the competent courts of Germany.\n\n9. Modifications to T&Cs\n\nNavimate reserves the right to modify these T&Cs at any time. We will notify you of any changes by posting the revised T&Cs within the App. Your continued use of the App after the revised T&Cs are posted constitutes your agreement to the changes.\n\n10. Additional Permissions\n\n10.1 The App utilizes: Geolocation: To provide location-based features and functionalities within the App. Photo Gallery Access: To allow you to upload photos from your device when adding content to the App. 10.2 We will only access your geolocation and photo gallery with your permission.\n\n11. Contact Us\n\nIf you have any questions about these T&Cs, your privacy, or data usage, please contact us at navimate.cub@gmail.com.\n',
       'de': '',
     },
     '28z3tkgy': {
-      'en': 'About us',
+      'en': 'Navimate Terms & Conditions',
       'de': '',
     },
     'wbw9k9zk': {
@@ -936,7 +921,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
     },
   },
-  // MapsTrial
+  // MapsGenPrac
   {
     '63giy7h3': {
       'en': 'Map',
@@ -977,121 +962,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // SpecialistsPage
   {
     'wfm802k6': {
-      'en': 'General Practitioners',
-      'de': '',
-    },
-  },
-  // SpecialistsPageListNOTWORKNG
-  {
-    '89myqfew': {
-      'en': 'Search all articles...',
-      'de': '',
-    },
-    'wk2y9j63': {
-      'en': 'Open Now',
-      'de': '',
-    },
-    '5ojte7t4': {
-      'en': 'English',
-      'de': '',
-    },
-    'tf6190h3': {
-      'en': 'TK',
-      'de': '',
-    },
-    '84z8b9xh': {
-      'en': 'AOK',
-      'de': '',
-    },
-    'h6s5m9iq': {
-      'en': 'Location - Near to Far',
-      'de': '',
-    },
-    'w8cg1k67': {
-      'en': 'Location  - Far to Near',
-      'de': '',
-    },
-    '5lykc6rz': {
-      'en': 'Review - 1 to 5',
-      'de': '',
-    },
-    'wa742buo': {
-      'en': 'Review - 5 to 1',
-      'de': '',
-    },
-    'apukhzwj': {
-      'en': 'Work experience - most to least',
-      'de': '',
-    },
-    'pn93jysy': {
-      'en': 'Work experience - least to most',
-      'de': '',
-    },
-    'vq1f1py3': {
-      'en': 'Sort by',
-      'de': '',
-    },
-    'z233o5wo': {
-      'en': 'Search for an item...',
-      'de': '',
-    },
-    '6btq4gax': {
-      'en': 'Pumpenstrasse 10',
-      'de': '',
-    },
-    '2w9r7i46': {
-      'en': '28759 Bremen',
-      'de': '',
-    },
-    'fyghcx9i': {
-      'en': 'map',
-      'de': '',
-    },
-    '8uqxkfpn': {
-      'en': 'Pumpenstrasse 10',
-      'de': '',
-    },
-    '44qrhf7j': {
-      'en': '28759 Bremen',
-      'de': '',
-    },
-    '9ac9napi': {
-      'en': 'map',
-      'de': '',
-    },
-  },
-  // GenPracDescriptionNotUsing
-  {
-    'j8g7fk1a': {
-      'en': 'Discription',
-      'de': '',
-    },
-    'fpurbtk0': {
-      'en': '3',
-      'de': '',
-    },
-    '6axub2m7': {
-      'en': 'likes',
-      'de': '',
-    },
-    'no90zmjp': {
-      'en': '8',
-      'de': '',
-    },
-    'rn3dhtnv': {
-      'en': 'Reviews',
-      'de': '',
-    },
-    'y4q73qnq': {
-      'en': 'Reviews',
-      'de': '',
-    },
-    'iibzjmyi': {
-      'en': 'Write a Review',
-      'de': '',
-    },
-    'g0oz2s14': {
-      'en': 'Home',
+      'en': 'Specialists',
       'de': '',
     },
   },
@@ -1191,18 +1062,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Language:',
       'de': '',
     },
-    'tycg82k5': {
-      'en':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      'de': '',
-    },
     'ai7671yd': {
       'en': 'Appointments by:',
-      'de': '',
-    },
-    '8w75qqvo': {
-      'en':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       'de': '',
     },
     'n5wp69ja': {
@@ -1312,6 +1173,28 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
     },
     '2ss7217x': {
+      'en': 'Home',
+      'de': '',
+    },
+  },
+  // MapsSpecialists
+  {
+    's6linz6f': {
+      'en': 'Map',
+      'de': '',
+    },
+    'vahta63i': {
+      'en': 'Home',
+      'de': '',
+    },
+  },
+  // MapsHospitals
+  {
+    'j2gv34dl': {
+      'en': 'Map',
+      'de': '',
+    },
+    'vhxgcnmv': {
       'en': 'Home',
       'de': '',
     },

@@ -1,8 +1,10 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:expandable/expandable.dart';
@@ -504,6 +506,7 @@ class _GenPracDescriptionWidgetState extends State<GenPracDescriptionWidget>
               children: [
                 Expanded(
                   child: SingleChildScrollView(
+                    primary: false,
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -724,20 +727,36 @@ class _GenPracDescriptionWidgetState extends State<GenPracDescriptionWidget>
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 3.0, 16.0, 3.0),
-                                      child: Text(
-                                        formatNumber(
-                                          genPracDescriptionGeneralPractitionersRecord
-                                              .phoneNumber,
-                                          formatType: FormatType.custom,
-                                          format: '+',
-                                          locale: '',
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          await launchURL((String phone) {
+                                            return "tel:+$phone";
+                                          }(genPracDescriptionGeneralPractitionersRecord
+                                              .phoneNumber
+                                              .toString()));
+                                        },
+                                        child: Text(
+                                          formatNumber(
+                                            genPracDescriptionGeneralPractitionersRecord
+                                                .phoneNumber,
+                                            formatType: FormatType.custom,
+                                            format: '+',
+                                            locale: '',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                color: FlutterFlowTheme.of(
+                                                        context)
+                                                    .primary,
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              letterSpacing: 0.0,
-                                            ),
                                       ).animateOnPageLoad(animationsMap[
                                           'textOnPageLoadAnimation5']!),
                                     ),
@@ -1080,18 +1099,30 @@ class _GenPracDescriptionWidgetState extends State<GenPracDescriptionWidget>
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 3.0, 16.0, 3.0),
-                                        child: Text(
-                                          genPracDescriptionGeneralPractitionersRecord
-                                              .email,
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                letterSpacing: 0.0,
-                                              ),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            await launchURL((String emails) {
+                                              return 'mailto:$emails';
+                                            }(genPracDescriptionGeneralPractitionersRecord
+                                                .email));
+                                          },
+                                          child: Text(
+                                            genPracDescriptionGeneralPractitionersRecord
+                                                .email,
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
                                         ).animateOnPageLoad(animationsMap[
                                             'textOnPageLoadAnimation17']!),
                                       ),
@@ -1223,9 +1254,14 @@ class _GenPracDescriptionWidgetState extends State<GenPracDescriptionWidget>
                                         FlutterFlowMarker(
                                           googleMapMarker.serialize(),
                                           googleMapMarker,
+                                          () async {
+                                            await launchURL(
+                                                genPracDescriptionGeneralPractitionersRecord
+                                                    .mapLocationUrl);
+                                          },
                                         ),
                                     ],
-                                    markerColor: GoogleMarkerColor.violet,
+                                    markerColor: GoogleMarkerColor.red,
                                     mapType: MapType.normal,
                                     style: GoogleMapStyle.standard,
                                     initialZoom: 14.0,
@@ -1246,8 +1282,6 @@ class _GenPracDescriptionWidgetState extends State<GenPracDescriptionWidget>
                               child: Container(
                                 width: double.infinity,
                                 decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 child: Column(
@@ -1288,12 +1322,53 @@ class _GenPracDescriptionWidgetState extends State<GenPracDescriptionWidget>
                                           return Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              Icon(
-                                                Icons.thumb_up,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                size: 20.0,
+                                              ToggleIcon(
+                                                onPressed: () async {
+                                                  final likedByElement =
+                                                      currentUserReference;
+                                                  final likedByUpdate =
+                                                      genPracDescriptionGeneralPractitionersRecord
+                                                              .likedBy
+                                                              .contains(
+                                                                  likedByElement)
+                                                          ? FieldValue
+                                                              .arrayRemove([
+                                                              likedByElement
+                                                            ])
+                                                          : FieldValue
+                                                              .arrayUnion([
+                                                              likedByElement
+                                                            ]);
+                                                  await genPracDescriptionGeneralPractitionersRecord
+                                                      .reference
+                                                      .update({
+                                                    ...mapToFirestore(
+                                                      {
+                                                        'Liked_by':
+                                                            likedByUpdate,
+                                                      },
+                                                    ),
+                                                  });
+                                                },
+                                                value:
+                                                    genPracDescriptionGeneralPractitionersRecord
+                                                        .likedBy
+                                                        .contains(
+                                                            currentUserReference),
+                                                onIcon: Icon(
+                                                  Icons.thumb_up,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  size: 25.0,
+                                                ),
+                                                offIcon: Icon(
+                                                  Icons.thumb_up_outlined,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  size: 25.0,
+                                                ),
                                               ),
                                               Padding(
                                                 padding: const EdgeInsetsDirectional
@@ -1301,7 +1376,7 @@ class _GenPracDescriptionWidgetState extends State<GenPracDescriptionWidget>
                                                         8.0, 0.0, 0.0, 0.0),
                                                 child: Text(
                                                   genPracDescriptionGeneralPractitionersRecord
-                                                      .netLike
+                                                      .likedBy.length
                                                       .toString(),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1503,7 +1578,12 @@ class _GenPracDescriptionWidgetState extends State<GenPracDescriptionWidget>
                                                                         40.0),
                                                             child:
                                                                 Image.network(
-                                                              'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60',
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                rowUsersRecord
+                                                                    .photoUrl,
+                                                                'https://firebasestorage.googleapis.com/v0/b/navimate-4468c.appspot.com/o/default-avatar-profile-icon-social-600nw-1677509740.webp?alt=media&token=0e7eb9e5-d6f1-4a38-b9dc-42309b34edaa',
+                                                              ),
                                                               width: 40.0,
                                                               height: 40.0,
                                                               fit: BoxFit.cover,

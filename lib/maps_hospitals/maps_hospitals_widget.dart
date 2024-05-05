@@ -4,25 +4,29 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'maps_trial_model.dart';
-export 'maps_trial_model.dart';
+import 'maps_hospitals_model.dart';
+export 'maps_hospitals_model.dart';
 
-class MapsTrialWidget extends StatefulWidget {
-  const MapsTrialWidget({super.key});
+class MapsHospitalsWidget extends StatefulWidget {
+  const MapsHospitalsWidget({super.key});
 
   @override
-  State<MapsTrialWidget> createState() => _MapsTrialWidgetState();
+  State<MapsHospitalsWidget> createState() => _MapsHospitalsWidgetState();
 }
 
-class _MapsTrialWidgetState extends State<MapsTrialWidget> {
-  late MapsTrialModel _model;
+class _MapsHospitalsWidgetState extends State<MapsHospitalsWidget> {
+  late MapsHospitalsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  LatLng? currentUserLocationValue;
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => MapsTrialModel());
+    _model = createModel(context, () => MapsHospitalsModel());
+
+    getCurrentUserLocation(defaultLocation: const LatLng(0.0, 0.0), cached: true)
+        .then((loc) => setState(() => currentUserLocationValue = loc));
   }
 
   @override
@@ -34,8 +38,25 @@ class _MapsTrialWidgetState extends State<MapsTrialWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<List<GeneralPractitionersRecord>>(
-      future: queryGeneralPractitionersRecordOnce(),
+    if (currentUserLocationValue == null) {
+      return Container(
+        color: FlutterFlowTheme.of(context).primaryBackground,
+        child: Center(
+          child: SizedBox(
+            width: 50.0,
+            height: 50.0,
+            child: CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(
+                FlutterFlowTheme.of(context).primary,
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
+    return FutureBuilder<List<HospitalsRecord>>(
+      future: queryHospitalsRecordOnce(),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -54,8 +75,7 @@ class _MapsTrialWidgetState extends State<MapsTrialWidget> {
             ),
           );
         }
-        List<GeneralPractitionersRecord>
-            mapsTrialGeneralPractitionersRecordList = snapshot.data!;
+        List<HospitalsRecord> mapsHospitalsHospitalsRecordList = snapshot.data!;
         return GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -83,7 +103,7 @@ class _MapsTrialWidgetState extends State<MapsTrialWidget> {
               ),
               title: Text(
                 FFLocalizations.of(context).getText(
-                  '63giy7h3' /* Map */,
+                  'j2gv34dl' /* Map */,
                 ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Outfit',
@@ -107,10 +127,9 @@ class _MapsTrialWidgetState extends State<MapsTrialWidget> {
                       onCameraIdle: (latLng) =>
                           _model.googleMapsCenter = latLng,
                       initialLocation: _model.googleMapsCenter ??=
-                          mapsTrialGeneralPractitionersRecordList
-                              .first.location!,
-                      markers: mapsTrialGeneralPractitionersRecordList
-                          .map((e) => e.location)
+                          currentUserLocationValue!,
+                      markers: mapsHospitalsHospitalsRecordList
+                          .map((e) => e.locationLatLng)
                           .withoutNulls
                           .toList()
                           .map(
@@ -120,7 +139,7 @@ class _MapsTrialWidgetState extends State<MapsTrialWidget> {
                             ),
                           )
                           .toList(),
-                      markerColor: GoogleMarkerColor.rose,
+                      markerColor: GoogleMarkerColor.red,
                       mapType: MapType.normal,
                       style: GoogleMapStyle.standard,
                       initialZoom: 10.0,

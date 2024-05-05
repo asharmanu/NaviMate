@@ -59,7 +59,7 @@ class _SpecialistsPageWidgetState extends State<SpecialistsPageWidget> {
           ),
           title: Text(
             FFLocalizations.of(context).getText(
-              'wfm802k6' /* General Practitioners */,
+              'wfm802k6' /* Specialists */,
             ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Outfit',

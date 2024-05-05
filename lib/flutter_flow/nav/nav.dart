@@ -151,11 +151,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const SpecialistWidget(),
         ),
         FFRoute(
-          name: 'Hospitals',
-          path: '/hospitals',
-          builder: (context, params) => const HospitalsWidget(),
-        ),
-        FFRoute(
           name: 'ForgotPassword',
           path: '/forgotPassword',
           builder: (context, params) => const ForgotPasswordWidget(),
@@ -196,9 +191,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'GenpractiCopyCopy',
-          path: '/genpractiCopyCopy',
-          builder: (context, params) => const GenpractiCopyCopyWidget(),
+          name: 'GenpractiMainPage',
+          path: '/genpractiMainPage',
+          builder: (context, params) => const GenpractiMainPageWidget(),
         ),
         FFRoute(
           name: 'TermsConditions',
@@ -206,9 +201,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const TermsConditionsWidget(),
         ),
         FFRoute(
-          name: 'MapsTrial',
-          path: '/mapsTrial',
-          builder: (context, params) => const MapsTrialWidget(),
+          name: 'MapsGenPrac',
+          path: '/mapsGenPrac',
+          builder: (context, params) => const MapsGenPracWidget(),
         ),
         FFRoute(
           name: 'writeReview',
@@ -226,36 +221,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'SpecialistsPage',
           path: '/specialistsPage',
           builder: (context, params) => const SpecialistsPageWidget(),
-        ),
-        FFRoute(
-          name: 'SpecialistsPageListNOTWORKNG',
-          path: '/specialistsPageListNOTWORKNG',
-          builder: (context, params) => SpecialistsPageListNOTWORKNGWidget(
-            speciality: params.getParam(
-              'speciality',
-              ParamType.String,
-            ),
-          ),
-        ),
-        FFRoute(
-          name: 'GenPracDescriptionNotUsing',
-          path: '/genPracDescriptionNotUsing',
-          asyncParams: {
-            'commentparameter': getDoc(['GeneralPractitioners'],
-                GeneralPractitionersRecord.fromSnapshot),
-          },
-          builder: (context, params) => GenPracDescriptionNotUsingWidget(
-            ref: params.getParam(
-              'ref',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['GeneralPractitioners'],
-            ),
-            commentparameter: params.getParam(
-              'commentparameter',
-              ParamType.Document,
-            ),
-          ),
         ),
         FFRoute(
           name: 'makeReminder',
@@ -308,6 +273,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               collectionNamePath: ['hospitals'],
             ),
           ),
+        ),
+        FFRoute(
+          name: 'MapsSpecialists',
+          path: '/mapsSpecialists',
+          builder: (context, params) => const MapsSpecialistsWidget(),
+        ),
+        FFRoute(
+          name: 'MapsHospitals',
+          path: '/mapsHospitals',
+          builder: (context, params) => const MapsHospitalsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -6,6 +6,7 @@ import '/backend/schema/util/firestore_util.dart';
 import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 
 class HospitalsRecord extends FirestoreRecord {
   HospitalsRecord._(
@@ -34,11 +35,6 @@ class HospitalsRecord extends FirestoreRecord {
   String? _locationUrl;
   String get locationUrl => _locationUrl ?? '';
   bool hasLocationUrl() => _locationUrl != null;
-
-  // "phone_number" field.
-  String? _phoneNumber;
-  String get phoneNumber => _phoneNumber ?? '';
-  bool hasPhoneNumber() => _phoneNumber != null;
 
   // "email" field.
   String? _email;
@@ -90,12 +86,16 @@ class HospitalsRecord extends FirestoreRecord {
   LatLng? get locationLatLng => _locationLatLng;
   bool hasLocationLatLng() => _locationLatLng != null;
 
+  // "phone_number" field.
+  int? _phoneNumber;
+  int get phoneNumber => _phoneNumber ?? 0;
+  bool hasPhoneNumber() => _phoneNumber != null;
+
   void _initializeFields() {
     _hospitalName = snapshotData['hospital_name'] as String?;
     _address = snapshotData['address'] as String?;
     _postalCode = snapshotData['postal_code'] as String?;
     _locationUrl = snapshotData['location_url'] as String?;
-    _phoneNumber = snapshotData['phone_number'] as String?;
     _email = snapshotData['email'] as String?;
     _openHours = snapshotData['open_hours'] as String?;
     _generalInformation = snapshotData['general_information'] as String?;
@@ -106,6 +106,7 @@ class HospitalsRecord extends FirestoreRecord {
     _website = snapshotData['website'] as String?;
     _appointment = snapshotData['appointment'] as String?;
     _locationLatLng = snapshotData['location_LatLng'] as LatLng?;
+    _phoneNumber = castToType<int>(snapshotData['phone_number']);
   }
 
   static CollectionReference get collection =>
@@ -147,7 +148,6 @@ Map<String, dynamic> createHospitalsRecordData({
   String? address,
   String? postalCode,
   String? locationUrl,
-  String? phoneNumber,
   String? email,
   String? openHours,
   String? generalInformation,
@@ -157,6 +157,7 @@ Map<String, dynamic> createHospitalsRecordData({
   String? website,
   String? appointment,
   LatLng? locationLatLng,
+  int? phoneNumber,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -164,7 +165,6 @@ Map<String, dynamic> createHospitalsRecordData({
       'address': address,
       'postal_code': postalCode,
       'location_url': locationUrl,
-      'phone_number': phoneNumber,
       'email': email,
       'open_hours': openHours,
       'general_information': generalInformation,
@@ -174,6 +174,7 @@ Map<String, dynamic> createHospitalsRecordData({
       'website': website,
       'appointment': appointment,
       'location_LatLng': locationLatLng,
+      'phone_number': phoneNumber,
     }.withoutNulls,
   );
 
@@ -190,7 +191,6 @@ class HospitalsRecordDocumentEquality implements Equality<HospitalsRecord> {
         e1?.address == e2?.address &&
         e1?.postalCode == e2?.postalCode &&
         e1?.locationUrl == e2?.locationUrl &&
-        e1?.phoneNumber == e2?.phoneNumber &&
         e1?.email == e2?.email &&
         e1?.openHours == e2?.openHours &&
         e1?.generalInformation == e2?.generalInformation &&
@@ -200,7 +200,8 @@ class HospitalsRecordDocumentEquality implements Equality<HospitalsRecord> {
         e1?.languages == e2?.languages &&
         e1?.website == e2?.website &&
         e1?.appointment == e2?.appointment &&
-        e1?.locationLatLng == e2?.locationLatLng;
+        e1?.locationLatLng == e2?.locationLatLng &&
+        e1?.phoneNumber == e2?.phoneNumber;
   }
 
   @override
@@ -209,7 +210,6 @@ class HospitalsRecordDocumentEquality implements Equality<HospitalsRecord> {
         e?.address,
         e?.postalCode,
         e?.locationUrl,
-        e?.phoneNumber,
         e?.email,
         e?.openHours,
         e?.generalInformation,
@@ -219,7 +219,8 @@ class HospitalsRecordDocumentEquality implements Equality<HospitalsRecord> {
         e?.languages,
         e?.website,
         e?.appointment,
-        e?.locationLatLng
+        e?.locationLatLng,
+        e?.phoneNumber
       ]);
 
   @override

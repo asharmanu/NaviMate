@@ -1,11 +1,11 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'genpracti_copy_copy_widget.dart' show GenpractiCopyCopyWidget;
+import 'genpracti_main_page_widget.dart' show GenpractiMainPageWidget;
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 
-class GenpractiCopyCopyModel extends FlutterFlowModel<GenpractiCopyCopyWidget> {
+class GenpractiMainPageModel extends FlutterFlowModel<GenpractiMainPageWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

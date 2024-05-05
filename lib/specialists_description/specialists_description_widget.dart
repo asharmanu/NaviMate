@@ -79,19 +79,18 @@ class _SpecialistsDescriptionWidgetState
       'textOnPageLoadAnimation2': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
-          VisibilityEffect(duration: 50.ms),
           FadeEffect(
             curve: Curves.easeInOut,
-            delay: 50.0.ms,
+            delay: 0.0.ms,
             duration: 600.0.ms,
             begin: 0.0,
             end: 1.0,
           ),
           MoveEffect(
             curve: Curves.easeInOut,
-            delay: 50.0.ms,
+            delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(-20.0, 0.0),
+            begin: const Offset(-10.0, 0.0),
             end: const Offset(0.0, 0.0),
           ),
         ],
@@ -356,6 +355,26 @@ class _SpecialistsDescriptionWidgetState
           ),
         ],
       ),
+      'textOnPageLoadAnimation16': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 50.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 50.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 50.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(-20.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
       'columnOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -493,7 +512,7 @@ class _SpecialistsDescriptionWidgetState
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 20.0, 0.0, 0.0),
                           child: Text(
-                            specialistsDescriptionSpecialistsRecord.nameSurname,
+                            specialistsDescriptionSpecialistsRecord.clinic,
                             style: FlutterFlowTheme.of(context)
                                 .headlineMedium
                                 .override(
@@ -503,6 +522,21 @@ class _SpecialistsDescriptionWidgetState
                                 ),
                           ).animateOnPageLoad(
                               animationsMap['textOnPageLoadAnimation1']!),
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              16.0, 10.0, 0.0, 0.0),
+                          child: Text(
+                            specialistsDescriptionSpecialistsRecord.nameSurname,
+                            style: FlutterFlowTheme.of(context)
+                                .headlineMedium
+                                .override(
+                                  fontFamily: 'Outfit',
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                          ).animateOnPageLoad(
+                              animationsMap['textOnPageLoadAnimation2']!),
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.min,
@@ -529,7 +563,7 @@ class _SpecialistsDescriptionWidgetState
                                                 letterSpacing: 0.0,
                                               ),
                                         ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation2']!),
+                                            'textOnPageLoadAnimation3']!),
                                       ),
                                     ],
                                   );
@@ -570,7 +604,7 @@ class _SpecialistsDescriptionWidgetState
                                                 letterSpacing: 0.0,
                                               ),
                                         ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation3']!),
+                                            'textOnPageLoadAnimation4']!),
                                       ),
                                     ],
                                   );
@@ -593,7 +627,7 @@ class _SpecialistsDescriptionWidgetState
                             Builder(
                               builder: (context) {
                                 if (specialistsDescriptionSpecialistsRecord
-                                            .number !=
+                                            .insuredBy !=
                                         '') {
                                   return Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -601,17 +635,38 @@ class _SpecialistsDescriptionWidgetState
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 3.0, 16.0, 3.0),
-                                        child: Text(
-                                          specialistsDescriptionSpecialistsRecord
-                                              .number,
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                letterSpacing: 0.0,
-                                              ),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            await launchURL((String phone) {
+                                              return "tel:+$phone";
+                                            }(specialistsDescriptionSpecialistsRecord
+                                                .phoneNumber
+                                                .toString()));
+                                          },
+                                          child: Text(
+                                            formatNumber(
+                                              specialistsDescriptionSpecialistsRecord
+                                                  .phoneNumber,
+                                              formatType: FormatType.custom,
+                                              format: '+',
+                                              locale: '',
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
                                         ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation4']!),
+                                            'textOnPageLoadAnimation5']!),
                                       ),
                                     ],
                                   );
@@ -653,7 +708,7 @@ class _SpecialistsDescriptionWidgetState
                                                 letterSpacing: 0.0,
                                               ),
                                         ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation5']!),
+                                            'textOnPageLoadAnimation6']!),
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -668,7 +723,7 @@ class _SpecialistsDescriptionWidgetState
                                                 letterSpacing: 0.0,
                                               ),
                                         ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation6']!),
+                                            'textOnPageLoadAnimation7']!),
                                       ),
                                     ],
                                   );
@@ -709,15 +764,14 @@ class _SpecialistsDescriptionWidgetState
                                                 letterSpacing: 0.0,
                                               ),
                                         ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation7']!),
+                                            'textOnPageLoadAnimation8']!),
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 3.0, 16.0, 3.0),
                                         child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'tycg82k5' /* Lorem ipsum dolor sit amet, co... */,
-                                          ),
+                                          specialistsDescriptionSpecialistsRecord
+                                              .language,
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
@@ -725,7 +779,7 @@ class _SpecialistsDescriptionWidgetState
                                                 letterSpacing: 0.0,
                                               ),
                                         ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation8']!),
+                                            'textOnPageLoadAnimation9']!),
                                       ),
                                     ],
                                   );
@@ -766,15 +820,14 @@ class _SpecialistsDescriptionWidgetState
                                                 letterSpacing: 0.0,
                                               ),
                                         ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation9']!),
+                                            'textOnPageLoadAnimation10']!),
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 3.0, 16.0, 3.0),
                                         child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            '8w75qqvo' /* Lorem ipsum dolor sit amet, co... */,
-                                          ),
+                                          specialistsDescriptionSpecialistsRecord
+                                              .appointment,
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
@@ -782,7 +835,7 @@ class _SpecialistsDescriptionWidgetState
                                                 letterSpacing: 0.0,
                                               ),
                                         ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation10']!),
+                                            'textOnPageLoadAnimation11']!),
                                       ),
                                     ],
                                   );
@@ -833,7 +886,7 @@ class _SpecialistsDescriptionWidgetState
                                                         letterSpacing: 0.0,
                                                       ),
                                             ).animateOnPageLoad(animationsMap[
-                                                'textOnPageLoadAnimation11']!),
+                                                'textOnPageLoadAnimation12']!),
                                           ),
                                         ),
                                         Expanded(
@@ -853,7 +906,7 @@ class _SpecialistsDescriptionWidgetState
                                                         letterSpacing: 0.0,
                                                       ),
                                             ).animateOnPageLoad(animationsMap[
-                                                'textOnPageLoadAnimation12']!),
+                                                'textOnPageLoadAnimation13']!),
                                           ),
                                         ),
                                       ],
@@ -900,26 +953,38 @@ class _SpecialistsDescriptionWidgetState
                                                   letterSpacing: 0.0,
                                                 ),
                                           ).animateOnPageLoad(animationsMap[
-                                              'textOnPageLoadAnimation13']!),
+                                              'textOnPageLoadAnimation14']!),
                                         ),
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 3.0, 16.0, 3.0),
-                                        child: Text(
-                                          specialistsDescriptionSpecialistsRecord
-                                              .email,
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                letterSpacing: 0.0,
-                                              ),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            await launchURL((String emails) {
+                                              return 'mailto:$emails';
+                                            }(specialistsDescriptionSpecialistsRecord
+                                                .email));
+                                          },
+                                          child: Text(
+                                            specialistsDescriptionSpecialistsRecord
+                                                .email,
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
                                         ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation14']!),
+                                            'textOnPageLoadAnimation15']!),
                                       ),
                                     ],
                                   );
@@ -1007,7 +1072,7 @@ class _SpecialistsDescriptionWidgetState
                                             ),
                                       ),
                                     ).animateOnPageLoad(animationsMap[
-                                        'textOnPageLoadAnimation15']!),
+                                        'textOnPageLoadAnimation16']!),
                                   );
                                 } else {
                                   return Container(
@@ -1049,9 +1114,14 @@ class _SpecialistsDescriptionWidgetState
                                         FlutterFlowMarker(
                                           googleMapMarker.serialize(),
                                           googleMapMarker,
+                                          () async {
+                                            await launchURL(
+                                                specialistsDescriptionSpecialistsRecord
+                                                    .locationUrl);
+                                          },
                                         ),
                                     ],
-                                    markerColor: GoogleMarkerColor.violet,
+                                    markerColor: GoogleMarkerColor.red,
                                     mapType: MapType.normal,
                                     style: GoogleMapStyle.standard,
                                     initialZoom: 14.0,

@@ -10,26 +10,26 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
-import 'genpracti_copy_copy_model.dart';
-export 'genpracti_copy_copy_model.dart';
+import 'genpracti_main_page_model.dart';
+export 'genpracti_main_page_model.dart';
 
-class GenpractiCopyCopyWidget extends StatefulWidget {
-  const GenpractiCopyCopyWidget({super.key});
+class GenpractiMainPageWidget extends StatefulWidget {
+  const GenpractiMainPageWidget({super.key});
 
   @override
-  State<GenpractiCopyCopyWidget> createState() =>
-      _GenpractiCopyCopyWidgetState();
+  State<GenpractiMainPageWidget> createState() =>
+      _GenpractiMainPageWidgetState();
 }
 
-class _GenpractiCopyCopyWidgetState extends State<GenpractiCopyCopyWidget> {
-  late GenpractiCopyCopyModel _model;
+class _GenpractiMainPageWidgetState extends State<GenpractiMainPageWidget> {
+  late GenpractiMainPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => GenpractiCopyCopyModel());
+    _model = createModel(context, () => GenpractiMainPageModel());
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
@@ -94,7 +94,7 @@ class _GenpractiCopyCopyWidgetState extends State<GenpractiCopyCopyWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
-                    context.pushNamed('MapsTrial');
+                    context.pushNamed('MapsGenPrac');
                   },
                   child: FaIcon(
                     FontAwesomeIcons.mapMarkedAlt,
@@ -756,7 +756,7 @@ class _GenpractiCopyCopyWidgetState extends State<GenpractiCopyCopyWidget> {
                             ),
                           ),
                           if (FFAppState().showFullList &&
-                              (_model.sortByValue != 'Reviews'))
+                              (_model.sortByValue != 'Reviews - Most like'))
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 8.0, 16.0, 8.0),
@@ -1028,9 +1028,12 @@ class _GenpractiCopyCopyWidgetState extends State<GenpractiCopyCopyWidget> {
                                                                             .transparent,
                                                                     onTap:
                                                                         () async {
-                                                                      await launchURL(
-                                                                          columnGeneralPractitionersRecord
-                                                                              .mapLocationUrl);
+                                                                      await launchURL((String
+                                                                          phone) {
+                                                                        return "tel:+$phone";
+                                                                      }(columnGeneralPractitionersRecord
+                                                                          .phoneNumber
+                                                                          .toString()));
                                                                     },
                                                                     child: Text(
                                                                       formatNumber(
@@ -1076,7 +1079,7 @@ class _GenpractiCopyCopyWidgetState extends State<GenpractiCopyCopyWidget> {
                               ),
                             ),
                           if (FFAppState().showFullList &&
-                              (_model.sortByValue == 'Reviews'))
+                              (_model.sortByValue == 'Reviews - Most like'))
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 8.0, 16.0, 8.0),

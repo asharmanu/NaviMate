@@ -590,38 +590,48 @@ class _HospitalsDescriptionWidgetState extends State<HospitalsDescriptionWidget>
                           children: [
                             Builder(
                               builder: (context) {
-                                if (hospitalsDescriptionHospitalsRecord
-                                            .phoneNumber !=
-                                        '') {
-                                  return Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 3.0, 16.0, 3.0),
+                                return Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 3.0, 16.0, 3.0),
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          await launchURL((String phone) {
+                                            return "tel:+$phone";
+                                          }(hospitalsDescriptionHospitalsRecord
+                                              .phoneNumber
+                                              .toString()));
+                                        },
                                         child: Text(
-                                          hospitalsDescriptionHospitalsRecord
-                                              .phoneNumber,
+                                          formatNumber(
+                                            hospitalsDescriptionHospitalsRecord
+                                                .phoneNumber,
+                                            formatType: FormatType.custom,
+                                            format: '+',
+                                            locale: '',
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
                                                 fontFamily: 'Readex Pro',
+                                                color: FlutterFlowTheme.of(
+                                                        context)
+                                                    .primary,
                                                 letterSpacing: 0.0,
                                               ),
-                                        ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation4']!),
-                                      ),
-                                    ],
-                                  );
-                                } else {
-                                  return Container(
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                        ),
+                                      ).animateOnPageLoad(animationsMap[
+                                          'textOnPageLoadAnimation4']!),
                                     ),
-                                  );
-                                }
-                              },
+                                  ],
+                                );
+                                                            },
                             ),
                           ],
                         ),
@@ -900,18 +910,30 @@ class _HospitalsDescriptionWidgetState extends State<HospitalsDescriptionWidget>
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 3.0, 16.0, 3.0),
-                                        child: Text(
-                                          hospitalsDescriptionHospitalsRecord
-                                              .email,
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                letterSpacing: 0.0,
-                                              ),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            await launchURL((String emails) {
+                                              return 'mailto:$emails';
+                                            }(hospitalsDescriptionHospitalsRecord
+                                                .email));
+                                          },
+                                          child: Text(
+                                            hospitalsDescriptionHospitalsRecord
+                                                .email,
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
                                         ).animateOnPageLoad(animationsMap[
                                             'textOnPageLoadAnimation14']!),
                                       ),
@@ -1043,9 +1065,14 @@ class _HospitalsDescriptionWidgetState extends State<HospitalsDescriptionWidget>
                                         FlutterFlowMarker(
                                           googleMapMarker.serialize(),
                                           googleMapMarker,
+                                          () async {
+                                            await launchURL(
+                                                hospitalsDescriptionHospitalsRecord
+                                                    .locationUrl);
+                                          },
                                         ),
                                     ],
-                                    markerColor: GoogleMarkerColor.violet,
+                                    markerColor: GoogleMarkerColor.red,
                                     mapType: MapType.normal,
                                     style: GoogleMapStyle.standard,
                                     initialZoom: 14.0,

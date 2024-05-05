@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'maps_trial_widget.dart' show MapsTrialWidget;
+import 'maps_hospitals_widget.dart' show MapsHospitalsWidget;
 import 'package:flutter/material.dart';
 
-class MapsTrialModel extends FlutterFlowModel<MapsTrialWidget> {
+class MapsHospitalsModel extends FlutterFlowModel<MapsHospitalsWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
